@@ -35,6 +35,10 @@ export default function Index() {
 						</Link>
 					</li>
 				)}
+				<li>
+					Latest experiment:{' '}
+					<a href="https://talktogarth.pages.dev">Talk to Garth</a>
+				</li>
 			</ul>
 
 			<footer className="flex flex-row items-center space-x-4 mt-10">

@@ -23,10 +23,11 @@ export default function Software() {
 				I love open source and enjoy working on side projects when time permits.
 			</p>
 			<p>
-				I often use React, Svelte, Node, TypeScript, Go, Python, REST, GraphQL,
-				CSS, Tailwind, NextJS, Remix, Figma, Jest, React Testing Library,
-				Playwright, Postgres, MySQL, all manner of AWS and GCP services,
-				Cloudflare, Vercel, Planetscale, Docker, Kubernetes, and CI/CD.
+				I often use TypeScript, Go, Python, React, Svelte, Node, Deno, REST,
+				GraphQL, CSS, Tailwind, NextJS, Remix, Figma, Jest, React Testing
+				Library, Playwright, Postgres, MySQL, all manner of AWS and GCP
+				services, OpenAI, Stable Diffusion, Cloudflare, Vercel, Planetscale,
+				Docker, Kubernetes, and CI/CD.
 			</p>
 			<p>
 				Have a question or idea? Please feel free to{' '}
