@@ -524,6 +524,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 9rem;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -627,7 +631,7 @@ html, body {
 h1 {
   font-size: 3rem;
   font-weight: 700;
-  line-height: 2;
+  line-height: 1.25;
 }
 
 h2 {

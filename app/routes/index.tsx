@@ -27,7 +27,6 @@ export default function Index() {
 				<li>
 					I play the <Link to="/music">accordion</Link>
 				</li>
-				<li className="h-4" />
 				<li>
 					Bored? <a href="https://talktodan.pages.dev">Chat with my bot</a>
 				</li>
@@ -41,9 +40,7 @@ export default function Index() {
 					</li>
 				)}
 				<li>
-					Latest experiments:{' '}
-					<a href="https://talktogarth.pages.dev">Talk to Garth</a>
-					{' + '}
+					Latest experiment:{' '}
 					<a href="https://github.com/dgurns/make-your-own-chatbot">
 						Make Your Own Chatbot
 					</a>
