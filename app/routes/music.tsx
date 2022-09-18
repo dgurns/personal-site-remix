@@ -45,8 +45,7 @@ export default function Music() {
 			<p>
 				I first picked up an accordion in a toy store in upstate New York and
 				have been addicted to it ever since. It has taken me to lots of fun
-				places around the world and introduced me to some great people,
-				including my wife!
+				places around the world and introduced me to some great people.
 			</p>
 			<p>
 				Have a question? Feel free to{' '}
