@@ -27,7 +27,11 @@ export default function Index() {
 				<li>
 					I play the <Link to="/music">accordion</Link>
 				</li>
-				<li>&nbsp;</li>
+				<li className="h-4" />
+				<li>
+					Bored? <a href="https://talktodan.pages.dev">Chat with my bot</a>
+				</li>
+				<li className="h-4" />
 				{mostRecentPost && (
 					<li>
 						Latest blog post:{' '}
