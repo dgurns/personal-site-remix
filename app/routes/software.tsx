@@ -9,7 +9,7 @@ export default function Software() {
 		<div>
 			<h1 className="mb-6">Software</h1>
 			<p>
-				I'm lead engineer at{' '}
+				I'm engineering team lead at{' '}
 				<a href="https://predictionhealth.com" target="_blank" rel="noreferrer">
 					PredictionHealth ↗
 				</a>
@@ -44,7 +44,7 @@ export default function Software() {
 					>
 						PredictionHealth ↗
 					</a>{' '}
-					<span className="text-gray-400">(Lead Engineer)</span>
+					<span className="text-gray-400">(Engineering Team Lead)</span>
 					<div>
 						Over the past few years, I've rearchitected legacy React, Go, and
 						Python apps, built a REST API with role-based access control, added
