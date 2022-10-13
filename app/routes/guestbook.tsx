@@ -90,19 +90,22 @@ export default function Guestbook() {
 
 			<div className="mb-12">
 				{!existingEntry ? (
-					<form method="post" className="flex flex-col items-start space-y-2">
+					<form
+						method="post"
+						className="flex flex-col items-start space-y-2 rounded border border-gray-500 p-4"
+					>
 						<input
 							type="text"
 							name="name"
 							placeholder="Your name"
 							required
-							className="w-full md:w-[280px]"
+							className="w-full"
 						/>
 						<input
 							type="text"
 							name="email"
 							placeholder="Your email (if you want to)"
-							className="w-full md:w-[280px]"
+							className="w-full"
 						/>
 						<input
 							type="text"
@@ -121,7 +124,7 @@ export default function Guestbook() {
 				) : (
 					<form
 						method="post"
-						className="flex flex-col items-start space-y-3 rounded border border-gray-400 p-4"
+						className="flex flex-col items-start space-y-3 rounded border border-gray-500 p-4"
 					>
 						<div>
 							<span className="text-gray-400">

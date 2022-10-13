@@ -873,14 +873,9 @@ select {
   border-width: 1px;
 }
 
-.border-gray-200 {
+.border-gray-500 {
   --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
-
-.border-gray-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
 .bg-transparent {
@@ -1113,10 +1108,6 @@ input[type="text"] {
 
   .md\:mt-16 {
     margin-top: 4rem;
-  }
-
-  .md\:w-\[280px\] {
-    width: 280px;
   }
 
   .md\:list-disc {
