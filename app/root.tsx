@@ -1,6 +1,5 @@
 import type { MetaFunction } from '@remix-run/cloudflare';
 import {
-	Link,
 	Links,
 	LiveReload,
 	Meta,
@@ -10,6 +9,7 @@ import {
 	useCatch,
 } from '@remix-run/react';
 import styles from './gen-styles/app.css';
+import Nav from '~/components/Nav';
 
 export const meta: MetaFunction = () => ({
 	charset: 'utf-8',
@@ -58,29 +58,7 @@ export default function App() {
 				<Links />
 			</head>
 			<body>
-				<nav className="flex flex-col space-y-1 px-4 py-2 md:flex-row md:items-center md:space-y-0 md:space-x-4">
-					<div className=" flex flex-row items-center space-x-3 md:space-x-4">
-						<Link to="/" prefetch="render">
-							Dan Gurney
-						</Link>
-						<span>/</span>
-					</div>
-					<div className="flex flex-row items-center space-x-4">
-						<Link to="/software" prefetch="render">
-							Software
-						</Link>
-						<Link to="/music" prefetch="render">
-							Music
-						</Link>
-						<Link to="/blog" prefetch="render">
-							Blog
-						</Link>
-						<Link to="/guestbook" prefetch="render">
-							Guestbook
-						</Link>
-					</div>
-				</nav>
-
+				<Nav />
 				<div className="mt-4 flex flex-col items-center p-4 md:mt-8 md:p-8">
 					<div className="w-full max-w-xl pb-48">
 						<Outlet />
@@ -103,22 +81,7 @@ export function ErrorBoundary() {
 				<Links />
 			</head>
 			<body>
-				<nav className="flex flex-row justify-start space-x-4 px-4 py-2">
-					<Link to="/" prefetch="render">
-						Dan Gurney
-					</Link>
-					<span>/</span>
-					<Link to="/software" prefetch="render">
-						Software
-					</Link>
-					<Link to="/music" prefetch="render">
-						Music
-					</Link>
-					<Link to="/blog" prefetch="render">
-						Blog
-					</Link>
-				</nav>
-
+				<Nav />
 				<div className="mt-4 flex flex-col items-center p-4 pb-48 md:mt-8 md:p-8">
 					<div className="w-full max-w-xl text-center">
 						Oops! An error occurred. Please reload the page.
@@ -142,22 +105,7 @@ export function CatchBoundary() {
 				<Links />
 			</head>
 			<body>
-				<nav className="flex flex-row justify-start space-x-4 px-4 py-2">
-					<Link to="/" prefetch="render">
-						Dan Gurney
-					</Link>
-					<span>/</span>
-					<Link to="/software" prefetch="render">
-						Software
-					</Link>
-					<Link to="/music" prefetch="render">
-						Music
-					</Link>
-					<Link to="/blog" prefetch="render">
-						Blog
-					</Link>
-				</nav>
-
+				<Nav />
 				<div className="mt-4 flex flex-col items-center p-4 pb-48 md:mt-8 md:p-8">
 					<div className="w-full max-w-xl text-center">
 						{caught.status} {caught.statusText}
