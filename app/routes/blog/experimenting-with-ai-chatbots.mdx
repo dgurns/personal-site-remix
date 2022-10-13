@@ -1,0 +1,103 @@
+---
+meta:
+  title: Experimenting with AI Chatbots
+---
+
+# {attributes.meta.title} 
+
+<div className="text-gray-400 mt-1 mb-6">
+October 13, 2022
+</div>
+
+Artificial intelligence has been making incredible strides lately. Now you can [create pictures from text](https://huggingface.co/spaces/stabilityai/stable-diffusion) or have an AI "copilot" [help you write code](https://github.com/features/copilot/). 
+
+I've been having fun experimenting with GPT-3 via the [OpenAI API](https://openai.com/api). For those who don't know, GPT-3 is an advanced language model that has been trained on hundreds of billions of words. Basically, its creators fed it a _lot_ of websites, books, and Wikipedia articles. If you give it a prompt, it can continue the text in a way that is sometimes indistinguishable from a human.
+
+My neighbor [Padraig](https://www.instagram.com/retrored1) and I figured that a chatbot would be a good way to communicate with GPT-3, so we came up with a few concepts:
+
+- [Talk to Garth](https://talktogarth.pages.dev)
+- [Have a Pint with Pintman](https://pintman.pages.dev)
+
+I also made one for myself:
+
+- [Talk to Dan](https://talktodan.pages.dev)
+
+These chatbots are made with [Remix](https://remix.run) and [Tailwind CSS](https://tailwindcss.com), and deployed to the edge via [Cloudflare](https://pages.cloudflare.com/).
+
+I used [Stable Diffusion](https://huggingface.co/spaces/stabilityai/stable-diffusion) to create the icon for Talk to Garth. The prompt was something like "A southern cowboy in the style of Disney".
+
+<img src="/images/garth.png" className="rounded-xl" width="80" height="80" />
+
+Behind the scenes, when you type in a message to one of these chatbots, it's sent to the OpenAI API, which uses GPT-3 to generate a response. The response is then displayed in the chat window.
+
+It took some experimentation to pass the right context to the AI. GPT-3 is incredibly capable but you need to give it some context for it to create a tailored response.
+
+Here's the API request that gets sent to OpenAI. You'll see that I also pass in the most recent few chats so that the AI has some conversational context:
+
+```ts
+const res = await fetch('https://api.openai.com/v1/completions', {
+		method: 'POST',
+		headers: {
+			Authorization: `Bearer ${context.OPENAI_API_KEY}`,
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+			model: 'text-curie-001',
+			temperature: 0.7,
+			max_tokens: 100,
+			prompt: `You are a software engineer and accordion player of traditional Irish music from Rhinebeck, NY named Dan. Respond with one sentence.\nYou: ${latestChat?.text}\nThem: ${prompt}\nYou:`,
+		}),
+	});
+```
+
+Here's the prompt in a more readable format. Essentially we're giving GPT-3 some background and telling it how we want it to respond:
+
+```ts
+You are a software engineer and accordion player of traditional Irish music from Rhinebeck, NY named Dan. 
+
+Respond with one sentence.
+
+You: [AI's last chat, ie. "I'm a software engineer named Dan"]
+
+Them: [user's new chat, ie. "What are your hobbies?"]
+
+You:
+```
+
+Then GPT-3 fills in the blank after `You:`, perhaps with something like `"I like to play the accordion"` due to the context we gave it.
+
+It's very creative though and easily handles questions well outside of the context.
+
+```
+What is the meaning of life?
+
+There is no one definitive answer to this question. For me, the meaning of life is to live each day to the fullest and enjoy the moment.
+```
+
+You can give it an Irish accent:
+
+```
+Why are the politicians so dumb?
+
+Because they're all a bunch of feckin' eejits, that's why!
+```
+
+Or make it a Southern cowboy:
+
+```
+Where is the best place to think?
+
+Up in the saddle!
+```
+
+Very fun stuff.
+
+I open-sourced all this code and made a repo that you can fork: [Make Your Own Chatbot](https://github.com/dgurns/make-your-own-chatbot)
+
+It'll get you started with a GPT-3 powered chatbot that deploys to Cloudflare's edge network all over the world.
+
+Send me a link to what you create!
+
+_psst..._
+
+<img src="/images/ai-helped-write.png" width="100%" />

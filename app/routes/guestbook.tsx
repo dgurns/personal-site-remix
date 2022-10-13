@@ -91,9 +91,7 @@ export default function Guestbook() {
 	return (
 		<div>
 			<h1 className="mb-6">Guestbook</h1>
-			<div className="mb-6">
-				Leave me a note below - where are you visiting from?
-			</div>
+			<div className="mb-6">Leave me a note below</div>
 
 			<div className="mb-12">
 				{!existingEntry ? (

@@ -28,9 +28,6 @@ export default function Index() {
 				<li>
 					I play the <Link to="/music">accordion</Link>
 				</li>
-				<li>
-					Bored? <a href="https://pintman.pages.dev">Chat with Pintman</a>
-				</li>
 				<li className="h-4" />
 				{mostRecentPost && (
 					<li>

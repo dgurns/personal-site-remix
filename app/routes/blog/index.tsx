@@ -13,6 +13,11 @@ interface Post {
 }
 export const posts: Post[] = [
 	{
+		title: 'Experimenting with AI Chatbots',
+		date: 'October 13, 2022',
+		slug: 'experimenting-with-ai-chatbots',
+	},
+	{
 		title: 'Migrating Trad Archive from NextJS to Remix',
 		date: 'August 7, 2022',
 		slug: 'migrating-trad-archive-to-remix',
