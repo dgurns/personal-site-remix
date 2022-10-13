@@ -1,4 +1,7 @@
-import { type LoaderArgs as RemixLoaderArgs } from "@remix-run/cloudflare";
+import { 
+	type LoaderArgs as RemixLoaderArgs, 
+	type ActionArgs as RemixActionArgs 
+} from "@remix-run/cloudflare";
 
 declare global {
 	const YOUTUBE_API_KEY: string;
@@ -6,8 +9,15 @@ declare global {
 
 export default global;
 
+type Context = {
+	YOUTUBE_API_KEY: string;
+	KV: KVNamespace;
+};
+
 export type LoaderArgs = RemixLoaderArgs & {
-	context: {
-		YOUTUBE_API_KEY: string;
-	}
+	context: Context
+}
+
+export type ActionArgs = RemixActionArgs & {
+	context: Context
 }

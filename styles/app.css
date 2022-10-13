@@ -15,12 +15,24 @@ h2 {
 	@apply text-2xl font-bold;
 }
 
-a {
-	@apply text-blue-200 hover:underline;
+a, .link{
+	@apply text-blue-200 hover:underline bg-transparent hover:bg-transparent p-0;
+}
+
+button, button[type="submit"] {
+	@apply bg-blue-200 rounded text-gray-900 hover:bg-blue-300 px-4 py-2;
+}
+
+button[type="submit"].destructive {
+	@apply bg-red-400 hover:bg-red-500;
 }
 
 p {
 	@apply mb-4;
+}
+
+input[type="text"] {
+	@apply rounded bg-gray-50 text-gray-900;
 }
 
 .blog-post h2 {

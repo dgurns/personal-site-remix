@@ -12,7 +12,7 @@ export default function Index() {
 	const [showYears, setShowYears] = useState(false);
 
 	return (
-		<div className="flex flex-col items-center justify-center text-center mt-8 md:mt-16">
+		<div className="mt-8 flex flex-col items-center justify-center text-center md:mt-16">
 			<img
 				src="/images/DanGurneyPhotoCircle.png"
 				alt="Dan Gurney"
@@ -40,22 +40,16 @@ export default function Index() {
 						</Link>
 					</li>
 				)}
-				<li>
-					Latest experiment:{' '}
-					<a href="https://github.com/dgurns/make-your-own-chatbot">
-						Make Your Own Chatbot
-					</a>
-				</li>
 			</ul>
 
-			<footer className="flex flex-row items-center space-x-4 mt-10">
+			<footer className="mt-10 flex flex-row items-center space-x-4">
 				<a href="https://www.linkedin.com/in/dangurney/">
 					<img
 						src="/images/LinkedIn-White-96.png"
 						height={24}
 						width={24}
 						alt="LinkedIn"
-						className="md:hover:scale-125 md:transition-all"
+						className="md:transition-all md:hover:scale-125"
 					/>
 				</a>
 				<a href="https://github.com/dgurns">
@@ -64,19 +58,22 @@ export default function Index() {
 						height={24}
 						width={24}
 						alt="GitHub"
-						className="md:hover:scale-125 md:transition-all"
+						className="md:transition-all md:hover:scale-125"
 					/>
 				</a>
 				<a
 					href="mailto:dan@dangurney.net"
-					className="text-gray-600 text-3xl md:hover:no-underline md:hover:scale-125 md:transition-all"
+					className="text-3xl text-gray-600 md:transition-all md:hover:scale-125 md:hover:no-underline"
 				>
 					✉️
 				</a>
 			</footer>
 
-			<div className="text-center text-gray-400 text-sm mt-2">
-				<button onClick={() => setShowYears(!showYears)}>
+			<div className="mt-2 text-center text-sm text-gray-400">
+				<button
+					className="bg-transparent p-0 text-gray-400 hover:bg-transparent"
+					onClick={() => setShowYears(!showYears)}
+				>
 					<ul>
 						<li>2022: Year of the Comeback</li>
 						{showYears && (

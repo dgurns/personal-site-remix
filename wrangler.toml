@@ -1,0 +1,4 @@
+[env.dev]
+kv_namespaces = [
+  { binding = "KV", preview_id = "a15804de55474ded9903f53faabb5f2b" }
+]
