@@ -7,7 +7,7 @@
   "scripts": {
     "dev:css": "tailwindcss -w -i ./styles/app.css -o app/gen-styles/app.css",
     "dev:remix": "remix watch",
-    "dev:wrangler": "cross-env NODE_ENV=development wrangler pages dev ./public --binding $(cat .env)",
+    "dev:wrangler": "cross-env NODE_ENV=development npx wrangler pages dev ./public --binding $(cat .env)",
     "dev": "remix build && run-p dev:*",
     "start": "cross-env NODE_ENV=production npm run dev:wrangler",
     "build:css": "tailwindcss -m -i ./styles/app.css -o app/gen-styles/app.css",
@@ -34,7 +34,7 @@
     "postcss": "^8.4.14",
     "tailwindcss": "^3.0.24",
     "typescript": "^4.6.4",
-    "wrangler": "beta"
+    "wrangler": "^2.1.11"
   },
   "engines": {
     "node": ">=14"
