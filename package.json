@@ -7,7 +7,7 @@
   "scripts": {
     "dev:css": "tailwindcss -w -i ./styles/app.css -o app/gen-styles/app.css",
     "dev:remix": "remix watch",
-    "dev:wrangler": "cross-env NODE_ENV=development npx wrangler pages dev ./public --binding $(cat .env)",
+    "dev:wrangler": "cross-env NODE_ENV=development npx wrangler pages dev ./public --binding $(cat .env) --kv KV",
     "dev": "remix build && run-p dev:*",
     "start": "cross-env NODE_ENV=production npm run dev:wrangler",
     "build:css": "tailwindcss -m -i ./styles/app.css -o app/gen-styles/app.css",
@@ -18,13 +18,16 @@
     "@remix-run/cloudflare-pages": "^1.7.0",
     "@remix-run/react": "^1.7.0",
     "cross-env": "^7.0.3",
+    "date-fns": "^2.29.3",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "zod": "^3.19.1"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.14.1",
     "@remix-run/dev": "^1.7.0",
     "@remix-run/eslint-config": "^1.7.0",
+    "@tailwindcss/forms": "^0.5.3",
     "@types/react": "^17.0.45",
     "@types/react-dom": "^17.0.17",
     "autoprefixer": "^10.4.7",
