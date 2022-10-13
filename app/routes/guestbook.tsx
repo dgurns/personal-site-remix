@@ -45,6 +45,13 @@ export async function action({ request, context }: ActionArgs) {
 	const form = Object.fromEntries(formData);
 
 	if (form.action === 'post') {
+		const existingEntry = entries.find((e) => e.ip === requestIp);
+		if (existingEntry) {
+			return json<ActionData>(
+				{ error: 'You already left a guestbook entry' },
+				{ status: 400 }
+			);
+		}
 		const formSchema = z.object({
 			name: z.string().min(1).max(100),
 			email: z.string().max(100),
