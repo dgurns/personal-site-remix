@@ -40,12 +40,6 @@ export default function Index() {
 						</Link>
 					</li>
 				)}
-				<li>
-					Latest experiment:{' '}
-					<a href="https://github.com/dgurns/make-your-own-chatbot">
-						Make Your Own Chatbot
-					</a>
-				</li>
 			</ul>
 
 			<footer className="flex flex-row items-center space-x-4 mt-10">
