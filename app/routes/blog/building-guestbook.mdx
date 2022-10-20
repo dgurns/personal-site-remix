@@ -1,0 +1,114 @@
+---
+meta:
+  title: Building a Guestbook with Workers KV
+---
+
+# {attributes.meta.title} 
+
+<div className="text-gray-400 mt-1 mb-6">
+October 20, 2022
+</div>
+
+I enjoy using my personal site as a way to experiment with new tech and play around with ideas. Inspired by [Lee Robinson's guestbook](https://leerob.io/guestbook), I decided to build my own. 
+
+Lately I've been excited about edge technologies like [Deno Deploy](https://deno.com/deploy) and [Cloudflare Workers](https://workers.cloudflare.com/). The overall idea is to put compute as close to users as possible, running as isolated functions in data centers around the globe. If you only have one central server in Virginia, for example, a user in Ireland is going to experience latency as their request travels to Virginia and back. Instead, what if the Irish user's request could be handled by a server in Dublin? And the Virginia user's request, by a server in Virginia. That's the edge -- compute distributed around the globe, as close as possible to users. 
+
+This website is running on the edge as a Remix app via Cloudflare Workers.
+
+My guestbook would need some kind of persistent storage to save entries - why not use the edge for that as well? 
+
+I decided to use [Cloudflare Workers KV](https://www.cloudflare.com/products/workers-kv/). As Cloudflare describes it:
+
+> Workers KV provides a secure low-latency key-value store across 275+ global locations.
+
+I decided to keep my data model simple and store a stringified array of guestbook entries in a single key-value pair. I'm using the IP address to prevent duplicate entries from the same user. I didn't want to go to the trouble of implementing OAuth, which would also add friction for people wanting to leave a message.
+
+```ts
+type GuestbookEntriesKvKey = 'guestbook-entries';
+const kvKey: GuestbookEntriesKvKey = 'guestbook-entries';
+
+interface GuestbookEntry {
+	name: string;
+	email: string;
+	message: string;
+	createdAt: string;
+	ip: string | null;
+}
+type GuestbookEntries = Array<GuestbookEntry>;
+```
+
+Here's the Remix `loader` function which fetches data for the page. Workers KV is available via a binding on `context`; so much more user-friendly than AWS IAM roles. We make a request for the key, pull out the entries, and return them for the page.
+
+```ts
+export async function loader({ context, request }: LoaderArgs) {
+	const kv = context.KV;
+	const entriesJson = (await kv.get(kvKey)) ?? '[]';
+	const entries: GuestbookEntries = JSON.parse(entriesJson);
+	const requestIp = request.headers.get('cf-connecting-ip');
+	const existingEntry = entries.find((e) => e.ip === requestIp);
+	return json({ entries, existingEntry });
+}
+```
+
+And here's the `action` function which creates or deletes a guestbook entry based on form submission. It fetches the existing entries, appends the new one, converts the JSON to a string, and saves to KV. I'm using [zod](https://zod.dev/) for form validation.
+
+```ts
+interface ActionData {
+	error?: string;
+	success?: boolean;
+}
+
+export async function action({ request, context }: ActionArgs) {
+	const kv = context.KV;
+	const entriesJson = (await kv.get(kvKey)) ?? '[]';
+	const entries: GuestbookEntries = JSON.parse(entriesJson);
+	const requestIp = request.headers.get('cf-connecting-ip');
+	const formData = await request.formData();
+	const form = Object.fromEntries(formData);
+
+	if (form.action === 'post') {
+		const existingEntry = entries.find((e) => e.ip === requestIp);
+		if (existingEntry) {
+			return json<ActionData>(
+				{ error: 'You already left a guestbook entry' },
+				{ status: 400 }
+			);
+		}
+		const formSchema = z.object({
+			name: z.string().min(1).max(100),
+			email: z.string().max(100),
+			message: z.string().min(1).max(1000),
+		});
+		const parsed = formSchema.safeParse(form);
+		if (!parsed.success) {
+			return json<ActionData>(
+				{ error: 'There is an issue with one of your entries' },
+				{ status: 400 }
+			);
+		}
+		const { name, email, message } = parsed.data;
+		const entry: GuestbookEntry = {
+			name,
+			email,
+			message,
+			createdAt: new Date().toISOString(),
+			ip: requestIp,
+		};
+		const updatedEntries = [entry, ...entries];
+		await kv.put(kvKey, JSON.stringify(updatedEntries));
+		return json<ActionData>({ success: true });
+	}
+
+	if (form.action === 'delete') {
+		const updatedEntries = entries.filter((e) => e.ip !== requestIp);
+		await kv.put(kvKey, JSON.stringify(updatedEntries));
+		return json<ActionData>({ success: true });
+	}
+}
+```
+
+I've been really impressed with the developer experience and performance of Workers KV so far, and indeed all of Cloudflare's products. 
+
+Excited to keep experimenting with the edge. The world of web apps is steadily moving towards it and when you see the performance for yourself, you can understand why.
+
+Go ahead and [leave me a message!](https://dangurney.net/guestbook)

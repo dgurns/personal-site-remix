@@ -13,6 +13,11 @@ interface Post {
 }
 export const posts: Post[] = [
 	{
+		title: 'Building a Guestbook with Workers KV',
+		date: 'October 20, 2022',
+		slug: 'building-guestbook',
+	},
+	{
 		title: 'Experimenting with AI Chatbots',
 		date: 'October 13, 2022',
 		slug: 'experimenting-with-ai-chatbots',
