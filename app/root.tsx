@@ -15,9 +15,7 @@ export const meta: MetaFunction = () => ({
 	charset: 'utf-8',
 	title: 'Dan Gurney - Personal Site',
 	viewport: 'width=device-width,initial-scale=1',
-	'og:image': 'https://dangurney.net/images/garth.png',
-	'og:description':
-		"Dan Gurney's personal site - software, music, blog, and experiments",
+	'og:description': 'Software, music, blog, and experiments',
 });
 
 export function links() {
