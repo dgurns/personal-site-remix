@@ -19,8 +19,8 @@ export default function Nav() {
 				<Link to="/blog" prefetch="render">
 					Blog
 				</Link>
-				<Link to="/guestbook" prefetch="render">
-					Guestbook
+				<Link to="/experiments" prefetch="render">
+					Experiments
 				</Link>
 			</div>
 		</nav>

@@ -91,7 +91,9 @@ export default function Guestbook() {
 	return (
 		<div>
 			<h1 className="mb-6">Guestbook</h1>
-			<div className="mb-6">Leave me a note below</div>
+			<div className="mb-6">
+				Leave me a note below, I'd love to hear from you.
+			</div>
 
 			<div className="mb-12">
 				{!existingEntry ? (
@@ -109,13 +111,13 @@ export default function Guestbook() {
 						<input
 							type="text"
 							name="email"
-							placeholder="Your email (if you want to)"
+							placeholder="Email (optional)"
 							className="w-full"
 						/>
 						<input
 							type="text"
 							name="message"
-							placeholder="Your message..."
+							placeholder="Message..."
 							required
 							className="w-full"
 						/>
