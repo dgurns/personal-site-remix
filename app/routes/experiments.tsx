@@ -16,6 +16,21 @@ export default function Experiments() {
 			<ul className="list-none space-y-4 md:list-disc">
 				<li>
 					<a
+						href="https://airishtunes.pages.dev"
+						target="_blank"
+						rel="noreferrer"
+					>
+						AI-rish Tunes ↗
+					</a>{' '}
+					<p className="text-gray-400">
+						Each day, I pick a random Irish tune and ask an AI to generate an
+						image for it. Made with Cloudflare Workers and using D1, their new
+						distributed SQLite product, and R2, their global object storage. All
+						running on the edge.
+					</p>
+				</li>
+				<li>
+					<a
 						href="https://album-cover-generator.pages.dev"
 						target="_blank"
 						rel="noreferrer"
