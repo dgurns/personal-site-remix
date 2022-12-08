@@ -13,6 +13,11 @@ interface Post {
 }
 export const posts: Post[] = [
 	{
+		title: 'AI-rish Tunes',
+		date: 'December 8, 2022',
+		slug: 'airish-tunes',
+	},
+	{
 		title: 'Building a Guestbook with Workers KV',
 		date: 'October 20, 2022',
 		slug: 'building-guestbook',
