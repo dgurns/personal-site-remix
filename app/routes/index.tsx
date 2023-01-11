@@ -72,9 +72,10 @@ export default function Index() {
 					onClick={() => setShowYears(!showYears)}
 				>
 					<ul>
-						<li>2022: Year of the Comeback</li>
+						<li>2023{showYears && ': Year of Friction'}</li>
 						{showYears && (
 							<>
+								<li>2022: Year of the Comeback</li>
 								<li>2021: Year of the Upside</li>
 								<li>2020: Year of the Launch</li>
 								<li>2019: Year of the Unexpected</li>
