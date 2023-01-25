@@ -1,6 +1,5 @@
-import { defer } from '@remix-run/cloudflare';
-import { useLoaderData, Await } from '@remix-run/react';
-import { Suspense } from 'react';
+import { json } from '@remix-run/cloudflare';
+import { useLoaderData } from '@remix-run/react';
 import { type LoaderArgs } from '~/types';
 
 export function meta() {
@@ -25,8 +24,9 @@ async function fetchLatestVideoId(apiKey: string): Promise<string> {
 }
 
 export async function loader({ context }: LoaderArgs) {
-	return defer({
-		latestVideoIdPromise: fetchLatestVideoId(context.YOUTUBE_API_KEY),
+	const latestVideoId = await fetchLatestVideoId(context.YOUTUBE_API_KEY);
+	return json({
+		latestVideoId,
 	});
 }
 
@@ -47,21 +47,15 @@ export default function Music() {
 			</p>
 			<h2 className="mt-8 mb-6">YouTube Channel</h2>
 			<div className="aspect-video bg-black">
-				<Suspense>
-					<Await resolve={data.latestVideoIdPromise}>
-						{(latestVideoId) => (
-							<iframe
-								title="YouTube Video"
-								width="100%"
-								height="100%"
-								src={`https://www.youtube.com/embed/${latestVideoId}`}
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-							/>
-						)}
-					</Await>
-				</Suspense>
+				<iframe
+					title="YouTube Video"
+					width="100%"
+					height="100%"
+					src={`https://www.youtube.com/embed/${data.latestVideoId}`}
+					frameBorder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowFullScreen
+				/>
 			</div>
 			<h2 className="mt-8 mb-6">Solo Albums</h2>
 			<iframe
