@@ -1,6 +1,6 @@
 import { Link } from '@remix-run/react';
 import { useState } from 'react';
-import { posts } from 'app/routes/blog/index';
+import { posts } from 'app/routes/blog._index';
 
 export const meta = () => ({
 	title: 'Dan Gurney - Personal Site',
