@@ -1,15 +1,7 @@
-import { json } from '@remix-run/cloudflare';
-import { useLoaderData } from '@remix-run/react';
+import { defer } from '@remix-run/cloudflare';
+import { useLoaderData, Await } from '@remix-run/react';
+import { Suspense } from 'react';
 import { type LoaderArgs } from '~/types';
-
-export function headers() {
-	// Cache for 1 hour. Then for the following 7 days, the next request will get
-	// the cached version while the cache is updated in the background.
-	return {
-		'Cache-Control':
-			'max-age=3600, s-maxage=3600, stale-while-revalidate=604800',
-	};
-}
 
 export function meta() {
 	return {
@@ -23,21 +15,23 @@ interface YouTubeResponse {
 	}>;
 }
 
-export async function loader({ context }: LoaderArgs) {
+async function fetchLatestVideoId(apiKey: string): Promise<string> {
 	const channelId = 'UC-noq8EUFYOyTUc1083bLZg';
-	const apiKey = context.YOUTUBE_API_KEY;
 	const res = await fetch(
 		`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=1&order=date&type=video&key=${apiKey}`
 	);
 	const data = await res.json<YouTubeResponse>();
-	const latestVideoId = data.items ? data.items[0].id.videoId : 'sVfTHcPqo9E';
-	return json({
-		latestVideoId,
+	return data.items ? data.items[0].id.videoId : 'sVfTHcPqo9E';
+}
+
+export async function loader({ context }: LoaderArgs) {
+	return defer({
+		latestVideoIdPromise: fetchLatestVideoId(context.YOUTUBE_API_KEY),
 	});
 }
 
 export default function Music() {
-	const { latestVideoId } = useLoaderData<typeof loader>();
+	const data = useLoaderData<typeof loader>();
 
 	return (
 		<div>
@@ -52,16 +46,22 @@ export default function Music() {
 				<a href="mailto:dan@dangurney.net">get in touch</a>.
 			</p>
 			<h2 className="mt-8 mb-6">YouTube Channel</h2>
-			<div className="aspect-video">
-				<iframe
-					title="YouTube Video"
-					width="100%"
-					height="100%"
-					src={`https://www.youtube.com/embed/${latestVideoId}`}
-					frameBorder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowFullScreen
-				/>
+			<div className="aspect-video bg-black">
+				<Suspense>
+					<Await resolve={data.latestVideoIdPromise}>
+						{(latestVideoId) => (
+							<iframe
+								title="YouTube Video"
+								width="100%"
+								height="100%"
+								src={`https://www.youtube.com/embed/${latestVideoId}`}
+								frameBorder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowFullScreen
+							/>
+						)}
+					</Await>
+				</Suspense>
 			</div>
 			<h2 className="mt-8 mb-6">Solo Albums</h2>
 			<iframe

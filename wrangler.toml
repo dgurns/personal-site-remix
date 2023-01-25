@@ -1,3 +1,6 @@
+compatibility_date = "2023-01-18"
+compatibility_flags = ["streams_enable_constructors"]
+
 [env.dev]
 kv_namespaces = [
   { binding = "KV", preview_id = "a15804de55474ded9903f53faabb5f2b" }
