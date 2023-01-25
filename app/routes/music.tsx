@@ -8,6 +8,15 @@ export function meta() {
 	};
 }
 
+export function headers() {
+	// Cache for 1 hour. Then for the following 7 days, the next request will get
+	// the cached version while the cache is updated in the background.
+	return {
+		'Cache-Control':
+			'max-age=3600, s-maxage=3600, stale-while-revalidate=604800',
+	};
+}
+
 interface YouTubeResponse {
 	items: Array<{
 		id: { videoId: string };
