@@ -33,9 +33,14 @@ export default function Software() {
 				Have a question or idea? Please feel free to{' '}
 				<a href="mailto:dan@dangurney.net">get in touch</a>.
 			</p>
+			<p>
+				<a href="/files/Dan_Gurney_CV.pdf" download>
+					Download my CV
+				</a>
+			</p>
 
 			<h2 className="mt-8">Recent Projects</h2>
-			<ul className="list-none md:list-disc mt-6 space-y-4">
+			<ul className="mt-6 list-none space-y-4 md:list-disc">
 				<li>
 					<a
 						href="https://predictionhealth.com"
@@ -75,7 +80,7 @@ export default function Software() {
 			</ul>
 
 			<h2 className="mt-8">Testimonials</h2>
-			<ul className="list-none mt-6 space-y-4">
+			<ul className="mt-6 list-none space-y-4">
 				<li>
 					<div>
 						"Dan Gurney has the ability to see the big picture and the skills to
