@@ -16,6 +16,24 @@ export default function Experiments() {
 			<ul className="list-none space-y-4 md:list-disc">
 				<li>
 					<a
+						href="https://github.com/dgurns/craic-ai"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Craic AI ↗
+					</a>{' '}
+					<p className="text-gray-400">
+						I thought it might be cool to use the ChatGPT API to help plan group
+						events. The idea is that you could input an event name and rough
+						date range, enter your invitees, and then they'd be automatically
+						emailed about availability. Then the app would feed the responses
+						into ChatGPT and have it pick a date that works for everyone. Not
+						sure if I'll finish this one but the tech was fun: Remix, Cloudflare
+						Pages, D1, ChatGPT API, and some prompt engineering.
+					</p>
+				</li>
+				<li>
+					<a
 						href="https://airishtunes.pages.dev"
 						target="_blank"
 						rel="noreferrer"
