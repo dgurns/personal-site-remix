@@ -9,11 +9,33 @@ export default function Experiments() {
 		<div className="space-y-6">
 			<h1>Experiments</h1>
 			<p>
-				Sometimes I try out new tech or build silly ideas. All of these are open
+				Sometimes I try out new tech or build fun ideas. All of these are open
 				source.
 			</p>
 
 			<ul className="list-none space-y-4 md:list-disc">
+				<li>
+					<a
+						href="https://chat.jamesgurney.com"
+						target="_blank"
+						rel="noreferrer"
+					>
+						James Gurney Knowledge Base ↗
+					</a>{' '}
+					<p className="text-gray-400">
+						My dad is a well known artist who has written thousands of blog
+						posts, made hundreds of YouTube videos, and written two
+						instructional books. With the announcement of ChatGPT Plugins and
+						the open sourcing of ChatGPT Retrieval Plugin, I realized I could
+						create a knowledgebase with access to all of my dad's written
+						materials, accessible via a chat interface. I forked the ChatGPT
+						Retrieval Plugin and customized the Python server with some data
+						scraping scripts – with GPT-4's help, of course. Then I built a chat
+						UI with NextJS, taking the opportunity to play around with React
+						Server Components. In the future we might turn this into a ChatGPT
+						plugin since the backend server can be used for that too.
+					</p>
+				</li>
 				<li>
 					<a
 						href="https://github.com/dgurns/craic-ai"

@@ -3,29 +3,27 @@ meta:
   title: AI-rish Tunes
 ---
 
-# {attributes.meta.title} 
+# {attributes.meta.title}
 
-<div className="text-gray-400 mt-1 mb-6">
-December 8, 2022
-</div>
+<div className="mt-1 mb-6 text-gray-400">December 8, 2022</div>
 
-**TL;DR:** I built [an app](https://airishtunes.pages.dev) that picks a random Irish tune each day and uses AI to generate an image for it. The app uses a bunch of new tech from Cloudflare, and in this post I explain what "the edge" means.
+**TL;DR:** I built [an app](https://airishtunes.pages.dev) that picks a random Irish tune each day and uses AI to generate an image for it. The app uses a bunch of new tech from Cloudflare, and in this post I dig into what "the edge" means.
 
 ---
 
-These days I'm getting more and more fascinated by "the edge", a buzzword you may have been hearing lately in the web development world. 
+These days I'm getting more and more fascinated by "the edge", a buzzword you may have been hearing lately in the web development world.
 
 If you're not familiar, here's the gist: Instead of running a central server and routing all requests to/from that server, now you can run your computations in whichever data center is closest to the user.
 
-As a result there is much less latency. Previously if the user was in Tokyo and the server was in Stockholm, each request had to travel [277ms](https://wondernetwork.com/pings/Stockholm/Tokyo) each way. Even if the rest of your app was _instant_, the user would have to wait a minimum of 544ms before seeing anything. 
+As a result there is much less latency. Previously if the user was in Tokyo and the server was in Stockholm, each request had to travel [277ms](https://wondernetwork.com/pings/Stockholm/Tokyo) each way. Even if the rest of your app was _instant_, the user would have to wait a minimum of 544ms before seeing anything.
 
-Now, if your user's request is handled on the edge, perhaps even by a data center in their city, they might get a response in _10ms_. 
+Now, if your user's request is handled on the edge, perhaps even by a data center in their city, they might get a response in _10ms_.
 
 This might seem like an insignificant difference but you will definitely notice it while you are browsing the web.
 
-The problem is that up until now, servers have been moving to the edge, but databases have not. That means any data requests might still have to go to a central database in, say, Virginia. Even if you make your app server fast, your database is holding everything up. 
+The problem is that up until now, servers have been moving to the edge, but databases have not. That means any data requests might still have to go to a central database in, say, Virginia. Even if you make your app server fast, your database is holding everything up.
 
-Things are starting to happen in this area; Planetscale is doing global MySQL read replicas but they look somewhat cumbersome to configure and you still have to manually route your requests. 
+Things are starting to happen in this area; Planetscale is doing global MySQL read replicas but they look somewhat cumbersome to configure and you still have to manually route your requests.
 
 Then [Cloudflare D1](https://blog.cloudflare.com/introducing-d1/) came along. Distributed SQLite running on the edge globally. It's still in alpha but it is absolutely amazing. Super easy to set up, the `wrangler` CLI is excellent, and instead of needing to configure complicated IAM rules like Amazon's RDS, you access it via a simple `env.DB` binding in your app.
 
@@ -39,13 +37,17 @@ Anyway, this is a long-winded way of explaining that I wanted to try all this st
 
 I'm storing metadata in D1 like the tune name, the date, and its ID on [The Session](https://thesession.org/). I'm storing the image data itself in R2.
 
-The app is built with [Remix](https://remix.run) and styled with [TailwindCSS](https://tailwindcss.com). 
+The app is built with [Remix](https://remix.run) and styled with [TailwindCSS](https://tailwindcss.com).
 
 The code is all open sourced [here](https://github.com/dgurns/airish-tunes).
 
 Here's the first image it came up with, for a tune called "The Eavesdropper". A little disturbing if I'm honest!
 
-<img src="/images/eavesdropper-ai.png" width="300" className="mt-8 rounded overflow-hidden" />
+<img
+	src="/images/eavesdropper-ai.png"
+	width="300"
+	className="mt-8 overflow-hidden rounded"
+/>
 
 Oh, and an AI called [ChatGPT](https://chat.openai.com) came up with the "AI-rish" pun. Strange times we are living in!
 
