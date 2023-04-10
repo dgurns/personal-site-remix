@@ -23,17 +23,17 @@ export default function Experiments() {
 						James Gurney Knowledge Base ↗
 					</a>{' '}
 					<p className="text-gray-400">
-						My dad is a well known artist who has written thousands of blog
-						posts, made hundreds of YouTube videos, and written two
-						instructional books. With the announcement of ChatGPT Plugins and
-						the open sourcing of ChatGPT Retrieval Plugin, I realized I could
-						create a knowledgebase with access to all of my dad's written
-						materials, accessible via a chat interface. I forked the ChatGPT
-						Retrieval Plugin and customized the Python server with some data
-						scraping scripts – with GPT-4's help, of course. Then I built a chat
-						UI with NextJS, taking the opportunity to play around with React
-						Server Components. In the future we might turn this into a ChatGPT
-						plugin since the backend server can be used for that too.
+						My dad is an artist who has written thousands of blog posts, made
+						hundreds of YouTube videos, and written two instructional books.
+						With the announcement of ChatGPT Plugins and the open sourcing of
+						ChatGPT Retrieval Plugin, I realized I could create a knowledgebase
+						with access to all of my dad's written materials, accessible via a
+						chat interface. I forked the ChatGPT Retrieval Plugin and customized
+						the Python server with some data scraping scripts – with GPT-4's
+						help, of course. Then I built a chat UI with NextJS, taking the
+						opportunity to play around with React Server Components. In the
+						future we might turn this into a ChatGPT plugin since the backend
+						server can be used for that too.
 					</p>
 				</li>
 				<li>
