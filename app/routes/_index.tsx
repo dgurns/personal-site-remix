@@ -29,14 +29,14 @@ export default function Index() {
 					I play the <Link to="/music">accordion</Link>
 				</li>
 				<li className="h-4" />
-				{mostRecentPost && (
+				{/* {mostRecentPost && (
 					<li>
 						Latest blog post:{' '}
 						<Link to={`/blog/${mostRecentPost.slug}`}>
 							{mostRecentPost.title}
 						</Link>
 					</li>
-				)}
+				)} */}
 				<li>
 					Latest experiment:{' '}
 					<a href="https://chat.jamesgurney.com">James Gurney Knowledge Base</a>
