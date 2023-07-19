@@ -814,6 +814,10 @@ select {
   max-width: 36rem;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
 .list-none {
   list-style-type: none;
 }

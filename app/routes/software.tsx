@@ -83,6 +83,21 @@ export default function Software() {
 			<ul className="mt-6 list-none space-y-4">
 				<li>
 					<div>
+						"Dan has been wonderful to work with and I would recommend him to
+						anyone. He has been a fantastic manager and mentor, and helped me
+						and our team grow as engineers. He has helped keep our codebase
+						clean, well organized, and performant. He makes insightful comments
+						during project planning, and always delivers on time. He is
+						knowledgeable about all of the best practices for both frontend and
+						backend code. He has an excellent eye for UI design, and has made
+						some of the best interfaces I've ever used."
+					</div>
+					<span className="text-gray-400">
+						- Jack Kelly, Software Engineer at PredictionHealth
+					</span>
+				</li>
+				<li>
+					<div>
 						"Dan Gurney has the ability to see the big picture and the skills to
 						get there. Dan uses his expertise to build quality features at
 						lightning speed... It's apparent that he values a positive company
