@@ -22,8 +22,8 @@ export default function Index() {
 
 			<ul className="mt-12 space-y-2">
 				<li>
-					I'm <Link to="/software">engineering team lead</Link> at Prediction
-					Health
+					I'm a <Link to="/software">senior software engineer</Link> at Inscribe
+					AI
 				</li>
 				<li>
 					I play the <Link to="/music">accordion</Link>

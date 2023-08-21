@@ -9,25 +9,24 @@ export default function Software() {
 		<div>
 			<h1 className="mb-6">Software</h1>
 			<p>
-				I'm engineering team lead at{' '}
-				<a href="https://predictionhealth.com" target="_blank" rel="noreferrer">
-					PredictionHealth ↗
+				I'm a senior software engineer at{' '}
+				<a href="https://inscribe.ai" target="_blank" rel="noreferrer">
+					Inscribe ↗
 				</a>
-				, where we are using AI to improve medical care.
+				, where we are using AI to help catch fraud.
 			</p>
 			<p>
-				Before that, I worked at CarTrawler and UBiqube, ran a freelance
-				consultancy, and founded a startup called Concert Window.
+				Before that, I worked at PredictionHealth, CarTrawler, and UBiqube, ran
+				a freelance consultancy, and founded a startup called Concert Window.
 			</p>
 			<p>
 				I love open source and enjoy working on side projects when time permits.
 			</p>
 			<p>
-				I often use TypeScript, Go, Python, React, Svelte, Node, Deno, REST,
-				GraphQL, CSS, Tailwind, NextJS, Remix, Figma, Jest, React Testing
-				Library, Playwright, Postgres, MySQL, all manner of AWS and GCP
-				services, OpenAI, Stable Diffusion, Cloudflare, Vercel, Planetscale,
-				Docker, Kubernetes, and CI/CD.
+				I often use TypeScript, Go, Python, React, Node, REST, GraphQL, CSS,
+				Tailwind, NextJS, Remix, Figma, React Testing Library, Playwright,
+				Postgres, MySQL, all manner of AWS and GCP services, OpenAI, Cloudflare,
+				Vercel, Planetscale, Docker, Kubernetes, and CI/CD.
 			</p>
 			<p>
 				Have a question or idea? Please feel free to{' '}
@@ -51,12 +50,12 @@ export default function Software() {
 					</a>{' '}
 					<span className="text-gray-400">(Engineering Team Lead)</span>
 					<div>
-						Over the past few years, I've rearchitected legacy React, Go, and
+						Over the past few years, I rearchitected legacy React, Go, and
 						Python apps, built a REST API with role-based access control, added
 						event tracking, introduced TypeScript, set up scalable dev processes
 						with automated CI/CD, mentored engineers, and worked on new product
-						development, among many other things. Some tools I've used are
-						React, NextJS, TypeScript, Playwright, Go, Python, gRPC, Docker, AWS
+						development, among many other things. Some tools I used are React,
+						NextJS, TypeScript, Playwright, Go, Python, gRPC, Docker, AWS
 						Lambda, BigQuery, Kubernetes, Vercel, and GitHub Actions.
 					</div>
 				</li>
