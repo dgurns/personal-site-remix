@@ -1,4 +1,4 @@
-import type { MetaFunction } from '@remix-run/cloudflare';
+import type { LinksFunction, MetaFunction } from '@remix-run/cloudflare';
 import {
 	Links,
 	LiveReload,
@@ -21,7 +21,7 @@ export const meta: MetaFunction = () => [
 	{ 'og:description': 'Software, music, blog, and experiments' },
 ];
 
-export function links() {
+export const links: LinksFunction = () => {
 	return [
 		{ rel: 'stylesheet', href: styles },
 		{
@@ -48,11 +48,15 @@ export function links() {
 			href: '/favicons/favicon-16x16.png',
 		},
 		{
+			rel: 'icon',
+			href: '/favicons/favicon.ico',
+		},
+		{
 			rel: 'shortcut icon',
 			href: '/favicons/favicon.ico',
 		},
 	];
-}
+};
 
 export default function App() {
 	return (

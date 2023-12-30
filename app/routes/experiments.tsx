@@ -18,6 +18,34 @@ export default function Experiments() {
 			<ul className="list-none space-y-4 md:list-disc">
 				<li>
 					<a
+						href="https://magic-ai-box.pages.dev"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Magic AI Box ↗
+					</a>{' '}
+					<p className="text-gray-400">
+						I wanted to play around with <a href="https://htmx.org/">HTMX</a>,
+						<a href="https://astro.build">Astro</a>, and{' '}
+						<a href="https://developers.cloudflare.com/workers-ai/">
+							Cloudflare AI
+						</a>
+						, so I built this simple app. HTMX is intriguing to me because it is
+						a return to simplicity on the client side. The React ecosystem is
+						extremely powerful but has become heavy and over-complicated. HTMX
+						lets the server drive application state. For example, if you submit
+						a form, it makes a POST request to the server, which returns just
+						the HTML snippet for the updated UI, which HTMX then swaps in on the
+						browser. Astro works well with this pattern because you can return
+						partials from server endpoints. Takeaways: If I was building a
+						simple app with mostly static content and a few forms, I'd probably
+						use Astro and HTMX. For a more interactive web app, for example
+						something with various UI elements appearing/hiding based on user
+						actions, or complicated loading states, I'd probably use Remix.
+					</p>
+				</li>
+				<li>
+					<a
 						href="https://chat.jamesgurney.com"
 						target="_blank"
 						rel="noreferrer"

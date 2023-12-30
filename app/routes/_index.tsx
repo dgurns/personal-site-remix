@@ -1,11 +1,14 @@
 import { Link } from '@remix-run/react';
 import { useState } from 'react';
+// import { posts } from 'app/routes/blog._index';
 
 export const meta = () => [
 	{
 		title: 'Dan Gurney - Personal Site',
 	},
 ];
+
+// const mostRecentPost = posts[0];
 
 export default function Index() {
 	const [showYears, setShowYears] = useState(false);
@@ -38,7 +41,7 @@ export default function Index() {
 				)} */}
 				<li>
 					Latest experiment:{' '}
-					<a href="https://chat.jamesgurney.com">James Gurney Knowledge Base</a>
+					<a href="https://magic-ai-box.pages.dev">Magic AI Box</a>
 				</li>
 			</ul>
 
