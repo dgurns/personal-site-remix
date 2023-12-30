@@ -9,3 +9,5 @@ functions
 yarn-error.log
 
 build/
+.wrangler/
+functions/
