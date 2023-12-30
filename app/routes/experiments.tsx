@@ -25,7 +25,7 @@ export default function Experiments() {
 						Magic AI Box ↗
 					</a>{' '}
 					<p className="text-gray-400">
-						I wanted to play around with <a href="https://htmx.org/">HTMX</a>,
+						I wanted to play around with <a href="https://htmx.org/">HTMX</a>,{' '}
 						<a href="https://astro.build">Astro</a>, and{' '}
 						<a href="https://developers.cloudflare.com/workers-ai/">
 							Cloudflare AI
@@ -38,10 +38,11 @@ export default function Experiments() {
 						the HTML snippet for the updated UI, which HTMX then swaps in on the
 						browser. Astro works well with this pattern because you can return
 						partials from server endpoints. Takeaways: If I was building a
-						simple app with mostly static content and a few forms, I'd probably
-						use Astro and HTMX. For a more interactive web app, for example
-						something with various UI elements appearing/hiding based on user
-						actions, or complicated loading states, I'd probably use Remix.
+						website with mostly static content and a few forms, I would
+						definitely consider Astro and HTMX. For a more interactive web app,
+						for example something with various UI elements appearing/hiding
+						based on user actions, or complicated loading states, I'd probably
+						use Remix.
 					</p>
 				</li>
 				<li>
