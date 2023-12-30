@@ -12,13 +12,12 @@ import Nav from '~/components/Nav';
 
 export const meta: MetaFunction = () => [
 	{
-		charset: 'utf-8',
-	},
-	{
 		title: 'Dan Gurney - Personal Site',
 	},
-	{ viewport: 'width=device-width,initial-scale=1' },
-	{ 'og:description': 'Software, music, blog, and experiments' },
+	{
+		property: 'og:description',
+		content: 'Software, music, blog, and experiments',
+	},
 ];
 
 export const links: LinksFunction = () => {
@@ -62,6 +61,8 @@ export default function App() {
 	return (
 		<html lang="en">
 			<head>
+				<meta charSet="utf-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<Meta />
 				<Links />
 			</head>
