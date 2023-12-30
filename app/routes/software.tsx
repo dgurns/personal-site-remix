@@ -1,8 +1,10 @@
-export function meta() {
-	return {
+import { type MetaFunction } from '@remix-run/cloudflare';
+
+export const meta: MetaFunction = () => [
+	{
 		title: 'Dan Gurney - Software',
-	};
-}
+	},
+];
 
 export default function Software() {
 	return (

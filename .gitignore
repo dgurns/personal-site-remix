@@ -7,3 +7,5 @@ functions
 /public/build
 .env
 yarn-error.log
+
+build/

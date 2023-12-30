@@ -6,17 +6,20 @@ import {
 	Outlet,
 	Scripts,
 	ScrollRestoration,
-	useCatch,
 } from '@remix-run/react';
 import styles from './gen-styles/app.css';
 import Nav from '~/components/Nav';
 
-export const meta: MetaFunction = () => ({
-	charset: 'utf-8',
-	title: 'Dan Gurney - Personal Site',
-	viewport: 'width=device-width,initial-scale=1',
-	'og:description': 'Software, music, blog, and experiments',
-});
+export const meta: MetaFunction = () => [
+	{
+		charset: 'utf-8',
+	},
+	{
+		title: 'Dan Gurney - Personal Site',
+	},
+	{ viewport: 'width=device-width,initial-scale=1' },
+	{ 'og:description': 'Software, music, blog, and experiments' },
+];
 
 export function links() {
 	return [
@@ -86,30 +89,6 @@ export function ErrorBoundary() {
 				<div className="mt-4 flex flex-col items-center p-4 pb-48 md:mt-8 md:p-8">
 					<div className="w-full max-w-xl text-center">
 						Oops! An error occurred. Please reload the page.
-					</div>
-				</div>
-
-				<ScrollRestoration />
-				<Scripts />
-				<LiveReload />
-			</body>
-		</html>
-	);
-}
-
-export function CatchBoundary() {
-	const caught = useCatch();
-	return (
-		<html lang="en">
-			<head>
-				<Meta />
-				<Links />
-			</head>
-			<body>
-				<Nav />
-				<div className="mt-4 flex flex-col items-center p-4 pb-48 md:mt-8 md:p-8">
-					<div className="w-full max-w-xl text-center">
-						{caught.status} {caught.statusText}
 					</div>
 				</div>
 

@@ -1,12 +1,13 @@
 import { json } from '@remix-run/cloudflare';
 import { useLoaderData } from '@remix-run/react';
 import { type LoaderArgs } from '~/types';
+import { type MetaFunction } from '@remix-run/cloudflare';
 
-export function meta() {
-	return {
+export const meta: MetaFunction = () => [
+	{
 		title: 'Dan Gurney - Music',
-	};
-}
+	},
+];
 
 export function headers() {
 	// Cache for 1 hour. Then for the following 7 days, the next request will get

@@ -1,14 +1,14 @@
-import { json } from '@remix-run/cloudflare';
+import { type MetaFunction, json } from '@remix-run/cloudflare';
 import { useActionData, useLoaderData } from '@remix-run/react';
 import { z } from 'zod';
 import format from 'date-fns/format';
 import { type LoaderArgs, type ActionArgs } from '~/types';
 
-export function meta() {
-	return {
+export const meta: MetaFunction = () => [
+	{
 		title: 'Dan Gurney - Guestbook',
-	};
-}
+	},
+];
 
 type GuestbookEntriesKvKey = 'guestbook-entries';
 const kvKey: GuestbookEntriesKvKey = 'guestbook-entries';

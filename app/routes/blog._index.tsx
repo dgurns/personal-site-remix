@@ -1,10 +1,11 @@
 import { Link } from '@remix-run/react';
+import { type MetaFunction } from '@remix-run/cloudflare';
 
-export function meta() {
-	return {
+export const meta: MetaFunction = () => [
+	{
 		title: 'Dan Gurney - Blog',
-	};
-}
+	},
+];
 
 interface Post {
 	title: string;
