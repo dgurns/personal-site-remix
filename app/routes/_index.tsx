@@ -40,8 +40,7 @@ export default function Index() {
 					</li>
 				)} */}
 				<li>
-					Latest experiment:{' '}
-					<a href="https://magic-ai-box.pages.dev">Magic AI Box</a>
+					Latest experiment: <a href="https://github.com/dgurns/clix">Clix</a>
 				</li>
 			</ul>
 

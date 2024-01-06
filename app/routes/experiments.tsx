@@ -18,6 +18,25 @@ export default function Experiments() {
 			<ul className="list-none space-y-4 md:list-disc">
 				<li>
 					<a
+						href="https://github.com/dgurns/clix"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Clix ↗
+					</a>{' '}
+					<p className="text-gray-400">
+						I'm fascinated by the idea of allowing an LLM agent to take
+						real-world actions. Clix is a first experiment in that direction.
+						You can type in what you want to do – for example, "Rebase this
+						branch on top of the latest master" – and Clix will query an LLM and
+						suggest a command for you to run. If you agree, it will actually run
+						the command on your computer. It seems to be capable of chaining
+						multi-step commands together. Lots of ideas for where to take this
+						next.
+					</p>
+				</li>
+				<li>
+					<a
 						href="https://magic-ai-box.pages.dev"
 						target="_blank"
 						rel="noreferrer"
