@@ -1,21 +1,19 @@
 ---
 meta:
-  title: Building a Guestbook with Workers KV
+  - title: Building a Guestbook with Workers KV
 ---
 
-# {attributes.meta.title} 
+# {attributes.meta[0].title}
 
-<div className="text-gray-400 mt-1 mb-6">
-October 20, 2022
-</div>
+<div className="text-gray-400 mt-1 mb-6">October 20, 2022</div>
 
-I enjoy using my personal site as a way to experiment with new tech and play around with ideas. Inspired by [Lee Robinson's guestbook](https://leerob.io/guestbook), I decided to build my own. 
+I enjoy using my personal site as a way to experiment with new tech and play around with ideas. Inspired by [Lee Robinson's guestbook](https://leerob.io/guestbook), I decided to build my own.
 
-Lately I've been excited about edge technologies like [Deno Deploy](https://deno.com/deploy) and [Cloudflare Workers](https://workers.cloudflare.com/). The overall idea is to put compute as close to users as possible, running as isolated functions in data centers around the globe. If you only have one central server in Virginia, for example, a user in Ireland is going to experience latency as their request travels to Virginia and back. Instead, what if the Irish user's request could be handled by a server in Dublin? And the Virginia user's request, by a server in Virginia. That's the edge -- compute distributed around the globe, as close as possible to users. 
+Lately I've been excited about edge technologies like [Deno Deploy](https://deno.com/deploy) and [Cloudflare Workers](https://workers.cloudflare.com/). The overall idea is to put compute as close to users as possible, running as isolated functions in data centers around the globe. If you only have one central server in Virginia, for example, a user in Ireland is going to experience latency as their request travels to Virginia and back. Instead, what if the Irish user's request could be handled by a server in Dublin? And the Virginia user's request, by a server in Virginia. That's the edge -- compute distributed around the globe, as close as possible to users.
 
 This website is running on the edge as a Remix app via Cloudflare Workers.
 
-My guestbook would need some kind of persistent storage to save entries - why not use the edge for that as well? 
+My guestbook would need some kind of persistent storage to save entries - why not use the edge for that as well?
 
 I decided to use [Cloudflare Workers KV](https://www.cloudflare.com/products/workers-kv/). As Cloudflare describes it:
 
@@ -107,7 +105,7 @@ export async function action({ request, context }: ActionArgs) {
 }
 ```
 
-I've been really impressed with the developer experience and performance of Workers KV so far, and indeed all of Cloudflare's products. 
+I've been really impressed with the developer experience and performance of Workers KV so far, and indeed all of Cloudflare's products.
 
 Excited to keep experimenting with the edge. The world of web apps is steadily moving towards it and when you see the performance for yourself, you can understand why.
 

@@ -1,13 +1,11 @@
 ---
 meta:
-  title: How This Site Was Made
+  - title: How This Site Was Made
 ---
 
-# {attributes.meta.title} 
+# {attributes.meta[0].title}
 
-<div className="text-gray-400 mt-1 mb-6">
-May 26, 2022
-</div>
+<div className="text-gray-400 mt-1 mb-6">May 26, 2022</div>
 
 When I'm choosing technologies at work, I try to consider their maturity,
 ongoing backwards compatibility, and future outlook. When it's my personal site,
@@ -65,9 +63,9 @@ it will be implementing many of the same features.
 This feels like an endorsement of the Remix paradigm. It's likely that NextJS
 will end up implementing these features in a more polished way and with better
 backwards compatibility, but they'll be fighting against more baggage from the
-old paradigm than Remix will be. 
+old paradigm than Remix will be.
 
-Either way, these are two great open source projects and we all win. 
+Either way, these are two great open source projects and we all win.
 
 ps. You know what I'd really like? Remix + Svelte.
 

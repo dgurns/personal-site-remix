@@ -1,19 +1,17 @@
 ---
 meta:
-  title: Experimenting with AI Chatbots
+  - title: Experimenting with AI Chatbots
 ---
 
-# {attributes.meta.title} 
+# {attributes.meta[0].title}
 
-<div className="text-gray-400 mt-1 mb-6">
-October 13, 2022
-</div>
+<div className="text-gray-400 mt-1 mb-6">October 13, 2022</div>
 
-Artificial intelligence has been making incredible strides lately. Now you can [create pictures from text](https://huggingface.co/spaces/stabilityai/stable-diffusion) or have an AI "copilot" [help you write code](https://github.com/features/copilot/). 
+Artificial intelligence has been making incredible strides lately. Now you can [create pictures from text](https://huggingface.co/spaces/stabilityai/stable-diffusion) or have an AI "copilot" [help you write code](https://github.com/features/copilot/).
 
 I've been having fun experimenting with GPT-3 via the [OpenAI API](https://openai.com/api). For those who don't know, GPT-3 is an advanced language model that has been trained on hundreds of billions of words. Basically, its creators fed it a _lot_ of websites, books, and Wikipedia articles. If you give it a prompt, it can continue the text in a way that is sometimes indistinguishable from a human.
 
-My neighbor [Padraig](https://www.instagram.com/retrored1) and I figured that a chatbot would be a good way to communicate with GPT-3. We came up with a few concepts which you can try  right now:
+My neighbor [Padraig](https://www.instagram.com/retrored1) and I figured that a chatbot would be a good way to communicate with GPT-3. We came up with a few concepts which you can try right now:
 
 - [Talk to Garth](https://talktogarth.pages.dev)
 - [Have a Pint with Pintman](https://pintman.pages.dev)
@@ -36,24 +34,24 @@ Here's the API request that gets sent to OpenAI. You'll see that I pass in the m
 
 ```ts
 const res = await fetch('https://api.openai.com/v1/completions', {
-		method: 'POST',
-		headers: {
-			Authorization: `Bearer ${context.OPENAI_API_KEY}`,
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify({
-			model: 'text-curie-001',
-			temperature: 0.7,
-			max_tokens: 100,
-			prompt: `You are a software engineer and accordion player of traditional Irish music from Rhinebeck, NY named Dan. Respond with one sentence.\nYou: ${latestChat?.text}\nThem: ${prompt}\nYou:`,
-		}),
-	});
+	method: 'POST',
+	headers: {
+		Authorization: `Bearer ${context.OPENAI_API_KEY}`,
+		'Content-Type': 'application/json',
+	},
+	body: JSON.stringify({
+		model: 'text-curie-001',
+		temperature: 0.7,
+		max_tokens: 100,
+		prompt: `You are a software engineer and accordion player of traditional Irish music from Rhinebeck, NY named Dan. Respond with one sentence.\nYou: ${latestChat?.text}\nThem: ${prompt}\nYou:`,
+	}),
+});
 ```
 
 Here's the prompt in a more readable format. Essentially we're giving GPT-3 some background info and telling it how we want it to respond:
 
 ```ts
-You are a software engineer and accordion player of traditional Irish music from Rhinebeck, NY named Dan. 
+You are a software engineer and accordion player of traditional Irish music from Rhinebeck, NY named Dan.
 
 Respond with one sentence.
 
