@@ -40,7 +40,7 @@ export default function Index() {
 					</li>
 				)} */}
 				<li>
-					Latest experiment: <a href="https://github.com/dgurns/clix">Clix</a>
+					Latest experiment: <Link to="/experiments">Speak a Site</Link>
 				</li>
 			</ul>
 

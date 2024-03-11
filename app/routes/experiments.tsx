@@ -18,6 +18,34 @@ export default function Experiments() {
 			<ul className="list-none space-y-4 md:list-disc">
 				<li>
 					<a
+						href="https://speak-a-site.pages.dev"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Speak a Site ↗
+					</a>{' '}
+					<p className="text-gray-400">
+						I'm starting to think that in the future, UIs will be generated
+						dynamically at runtime. Vercel's{' '}
+						<a
+							href="https://vercel.com/blog/ai-sdk-3-generative-ui"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Generative UI demo
+						</a>{' '}
+						is a cool example. Speak a Site is a proof of concept to see if you
+						can control the web with your voice! It records audio via the web
+						audio API, sends it to a Cloudflare Worker to be transcribed by
+						Whisper, then uses Llama 2 to update the HTML based on your guidance
+						and renders it on the page. This is a bit slow currently but it
+						works! Plug in GPT4 Turbo - or whatever comes next - and this starts
+						getting really interesting. Here's the{' '}
+						<a href="https://github.com/dgurns/speak-a-site">repo</a>.
+					</p>
+				</li>
+				<li>
+					<a
 						href="https://github.com/dgurns/clix"
 						target="_blank"
 						rel="noreferrer"
