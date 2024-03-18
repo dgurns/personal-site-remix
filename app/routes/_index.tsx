@@ -40,7 +40,7 @@ export default function Index() {
 					</li>
 				)} */}
 				<li>
-					Latest experiment: <Link to="/experiments">Speak a Site</Link>
+					Latest experiment: <Link to="/experiments">Edit Yourself</Link>
 				</li>
 			</ul>
 

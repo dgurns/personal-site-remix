@@ -18,6 +18,28 @@ export default function Experiments() {
 			<ul className="list-none space-y-4 md:list-disc">
 				<li>
 					<a
+						href="https://edit-yourself.pages.dev"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Edit Yourself ↗
+					</a>{' '}
+					<p className="text-gray-400">
+						This experiment became a tad dystopian. I was curious to see if one
+						AI agent could update another agent's system prompt, creating a
+						self-reinforcing feedback loop. Turns out it can, of course. The
+						goal you choose will guide the AI's behavior. As you can see in this
+						example, when you give it a goal like maximizing profit, it will do
+						whatever it takes to achieve it. Needless to say this has
+						potentially dark implications for society and I think engineers will
+						need to be <em>extremely</em> cognizant of this when building AI
+						systems. This was built with SvelteKit (very smooth experience), GPT
+						3.5 Turbo, and deployed to Cloudflare Pages.{' '}
+						<a href="https://github.com/dgurns/edit-yourself">Source code</a>.
+					</p>
+				</li>
+				<li>
+					<a
 						href="https://speak-a-site.pages.dev"
 						target="_blank"
 						rel="noreferrer"
