@@ -13,9 +13,10 @@ export default function Software() {
 			<p>
 				I'm a senior software engineer at{' '}
 				<a href="https://inscribe.ai" target="_blank" rel="noreferrer">
-					Inscribe ↗
+					Inscribe AI ↗
 				</a>
-				, where we are using AI to help catch fraud.
+				, leading an as-yet-unannounced project applying the latest AI
+				technology to help catch financial fraud.
 			</p>
 			<p>
 				Before that, I worked at PredictionHealth, CarTrawler, and UBiqube, ran

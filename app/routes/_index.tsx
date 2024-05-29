@@ -40,7 +40,7 @@ export default function Index() {
 					</li>
 				)} */}
 				<li>
-					Latest experiment: <Link to="/experiments">Edit Yourself</Link>
+					Latest experiment: <Link to="/experiments">Insta FFmpeg</Link>
 				</li>
 			</ul>
 
@@ -63,21 +63,7 @@ export default function Index() {
 						className="md:transition-all md:hover:scale-125"
 					/>
 				</a>
-				<a href="https://x.com/dpgurney">
-					<svg
-						viewBox="0 0 24 24"
-						width="24"
-						height="24"
-						className="md:transition-all md:hover:scale-125"
-					>
-						<g>
-							<path
-								fill="white"
-								d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-							></path>
-						</g>
-					</svg>
-				</a>
+
 				<a href="https://instagram.com/danpgurney">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

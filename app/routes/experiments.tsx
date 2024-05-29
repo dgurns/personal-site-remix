@@ -18,6 +18,30 @@ export default function Experiments() {
 			<ul className="list-none space-y-4 md:list-disc">
 				<li>
 					<a
+						href="https://github.com/dgurns/insta-ffmpeg"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Insta FFmpeg ↗
+					</a>{' '}
+					<p className="text-gray-400">
+						I'm having a blast learning the electric bass, and I've been
+						recording scratch tracks and posting them to Instagram stories.
+						Working with GPT-4o via my previous experiment{' '}
+						<a
+							href="https://github.com/dgurns/clix"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Clix
+						</a>
+						, I made a reusable ffmpeg command which takes separate mp3 + png
+						files and combines them into a video, complete with animated
+						waveforms.
+					</p>
+				</li>
+				<li>
+					<a
 						href="https://edit-yourself.pages.dev"
 						target="_blank"
 						rel="noreferrer"
