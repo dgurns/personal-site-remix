@@ -17,7 +17,7 @@ export default function Software() {
 				</a>
 				, building an as-yet-unannounced product applying the latest AI
 				technology to help catch financial fraud. Inscribe's customers include
-				some of the biggest names in fintech like Stripe, Coinbase, and Ramp.
+				some of the biggest names in fintech like Ramp and Plaid.
 			</p>
 			<p>
 				Before that, I built a new AI product line at PredictionHealth, worked
