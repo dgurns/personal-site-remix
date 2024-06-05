@@ -11,16 +11,18 @@ export default function Software() {
 		<div>
 			<h1 className="mb-6">Software</h1>
 			<p>
-				I'm a senior software engineer at{' '}
+				I'm tech lead for the generative AI team at{' '}
 				<a href="https://inscribe.ai" target="_blank" rel="noreferrer">
-					Inscribe AI ↗
+					Inscribe ↗
 				</a>
-				, leading an as-yet-unannounced project applying the latest AI
-				technology to help catch financial fraud.
+				, building an as-yet-unannounced product applying the latest AI
+				technology to help catch financial fraud. Inscribe's customers include
+				some of the biggest names in fintech like Stripe, Coinbase, and Ramp.
 			</p>
 			<p>
-				Before that, I worked at PredictionHealth, CarTrawler, and UBiqube, ran
-				a freelance consultancy, and founded a startup called Concert Window.
+				Before that, I built a new AI product line at PredictionHealth, worked
+				at CarTrawler and UBiqube, ran a freelance consultancy, and founded a
+				startup called Concert Window.
 			</p>
 			<p>
 				I love open source and enjoy working on side projects when time permits.
@@ -53,13 +55,14 @@ export default function Software() {
 					</a>{' '}
 					<span className="text-gray-400">(Engineering Team Lead)</span>
 					<div>
-						Over the past few years, I rearchitected legacy React, Go, and
-						Python apps, built a REST API with role-based access control, added
-						event tracking, introduced TypeScript, set up scalable dev processes
-						with automated CI/CD, mentored engineers, and worked on new product
-						development, among many other things. Some tools I used are React,
-						NextJS, TypeScript, Playwright, Go, Python, gRPC, Docker, AWS
-						Lambda, BigQuery, Kubernetes, Vercel, and GitHub Actions.
+						I helped PredictionHealth build a new product line, now doing
+						millions in revenue, which applies AI to medical care to improve
+						outcomes and efficiency. I worked with ML models and LLMs,
+						rearchitected legacy React, Go, and Python apps, set up scalable dev
+						processes with automated CI/CD, and mentored engineers, among many
+						other things. Some tools I used are React, NextJS, TypeScript,
+						Playwright, Go, Python, gRPC, Docker, AWS Lambda, BigQuery,
+						Kubernetes, Vercel, and GitHub Actions.
 					</div>
 				</li>
 				<li>

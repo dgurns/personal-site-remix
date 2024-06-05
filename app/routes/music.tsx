@@ -52,6 +52,13 @@ export default function Music() {
 				places around the world and introduced me to some great people.
 			</p>
 			<p>
+				Lately, I've been taking up electric bass as a midlife crisis.{' '}
+				<a href="https://www.instagram.com/stories/highlights/17878828656079490/">
+					Check out the highlights
+				</a>
+				, or lowlights, depending on your perspective!
+			</p>
+			<p>
 				Have a question? Feel free to{' '}
 				<a href="mailto:dan@dangurney.net">get in touch</a>.
 			</p>
