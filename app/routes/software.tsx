@@ -46,6 +46,20 @@ export default function Software() {
 			<h2 className="mt-8">Recent Projects</h2>
 			<ul className="mt-6 list-none space-y-4 md:list-disc">
 				<li>
+					<a href="https://inscribe.ai" target="_blank" rel="noreferrer">
+						Inscribe AI ↗
+					</a>
+					<span className="text-gray-400">(Tech Lead, Generative AI)</span>
+					<div>
+						Lately I've been tasked with creating a brand new generative AI team
+						which is using LLMs to build a new product line for the company.
+						Leading a talented group of fullstack and ML engineers, I've been
+						implementing scalable processes including customer feedback loops,
+						agile planning, LLM-agnostic system architecture, automated evals,
+						and continuous product delivery.
+					</div>
+				</li>
+				<li>
 					<a
 						href="https://predictionhealth.com"
 						target="_blank"
@@ -63,23 +77,6 @@ export default function Software() {
 						other things. Some tools I used are React, NextJS, TypeScript,
 						Playwright, Go, Python, gRPC, Docker, AWS Lambda, BigQuery,
 						Kubernetes, Vercel, and GitHub Actions.
-					</div>
-				</li>
-				<li>
-					<a
-						href="https://www.tradarchive.com"
-						target="_blank"
-						rel="noreferrer"
-					>
-						Trad Archive ↗
-					</a>{' '}
-					<span className="text-gray-400">(Creator, Principal Engineer)</span>
-					<div>
-						This is a really fun open source project I've been building in
-						partnership with the Irish Traditional Music Archive in Dublin. The
-						goal is to make their collections accessible to the public and use
-						crowdsourcing to tag previously unheard recordings. Technologies
-						used include Remix, Tailwind, Prisma, PlanetScale, and Vercel.
 					</div>
 				</li>
 			</ul>
