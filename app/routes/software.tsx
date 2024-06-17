@@ -11,13 +11,13 @@ export default function Software() {
 		<div>
 			<h1 className="mb-6">Software</h1>
 			<p>
-				I'm tech lead for the generative AI team at{' '}
+				I'm tech lead for the AI Agents team at{' '}
 				<a href="https://inscribe.ai" target="_blank" rel="noreferrer">
 					Inscribe ↗
 				</a>
-				, building an as-yet-unannounced product applying the latest AI
-				technology to help catch financial fraud. Inscribe's customers include
-				some of the biggest names in fintech like Ramp and Plaid.
+				, building LLM-powered AI agents to automate manual tasks and help catch
+				financial fraud. Inscribe's customers include some of the biggest names
+				in fintech like Ramp and Plaid.
 			</p>
 			<p>
 				Before that, I built a new AI product line at PredictionHealth, worked
@@ -49,7 +49,7 @@ export default function Software() {
 					<a href="https://inscribe.ai" target="_blank" rel="noreferrer">
 						Inscribe AI ↗
 					</a>
-					<span className="text-gray-400">(Tech Lead, Generative AI)</span>
+					<span className="text-gray-400">(Tech Lead, AI Agents)</span>
 					<div>
 						Lately I've been tasked with creating a brand new generative AI team
 						which is using LLMs to build a new product line for the company.
