@@ -11,9 +11,9 @@ export default function Software() {
 		<div>
 			<h1 className="mb-6">Software</h1>
 			<p>
-				I'm tech lead for the AI Agents team at{' '}
+				I'm a Staff Software Engineer at{' '}
 				<a href="https://inscribe.ai" target="_blank" rel="noreferrer">
-					Inscribe ↗
+					Inscribe AI ↗
 				</a>
 				, building LLM-powered AI agents to automate manual tasks and help catch
 				financial fraud. Inscribe's customers include some of the biggest names
@@ -49,9 +49,9 @@ export default function Software() {
 					<a href="https://inscribe.ai" target="_blank" rel="noreferrer">
 						Inscribe AI ↗
 					</a>
-					<span className="text-gray-400">(Tech Lead, AI Agents)</span>
+					<span className="text-gray-400">(Staff Software Engineer, AI Agents)</span>
 					<div>
-						Lately I've been tasked with creating a brand new generative AI team
+						Lately I've built a brand new generative AI team
 						which is using LLMs to build a new product line for the company.
 						Leading a talented group of fullstack and ML engineers, I've been
 						implementing scalable processes including customer feedback loops,
