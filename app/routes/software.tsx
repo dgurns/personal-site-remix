@@ -48,12 +48,10 @@ export default function Software() {
 				<li>
 					<a href="https://inscribe.ai" target="_blank" rel="noreferrer">
 						Inscribe AI ↗
-					</a>
+					</a>{' '}
 					<span className="text-gray-400">(Staff Software Engineer, AI Agents)</span>
 					<div>
-						Lately I've built a brand new generative AI team
-						which is using LLMs to build a new product line for the company.
-						Leading a talented group of fullstack and ML engineers, I've been
+						Lately I've built a generative AI team which is creating a new product line for the company. Leading a talented group of fullstack and ML engineers, I've been
 						implementing scalable processes including customer feedback loops,
 						agile planning, LLM-agnostic system architecture, automated evals,
 						and continuous product delivery.
@@ -85,6 +83,14 @@ export default function Software() {
 			<ul className="mt-6 list-none space-y-4">
 				<li>
 					<div>
+						Dan is an extraordinary leader and engineer who has profoundly shaped how I think about building technology. His bias for action and ability to energize teams is unmatched - he doesn't just plan, he executes, and brings everyone along with him. What makes Dan special is his combination of technical sophistication and collaborative spirit. He's always at the cutting edge of technology while maintaining an unwavering focus on shipping real solutions. I've seen firsthand how his optimism about technology, matched with incredible tenacity, turns ambitious visions into reality. Dan's leadership raises the bar for everyone around him, creating an environment where teams excel and deliver their best work. Any company would be fortunate to have his drive, technical acumen, and ability to consistently turn challenges into opportunities.
+					</div>
+					<span className="text-gray-400">
+						- Ray Fitzgerald, Senior Product Engineer at Inscribe AI
+					</span>
+				</li>
+				<li>
+					<div>
 						"Dan has been wonderful to work with and I would recommend him to
 						anyone. He has been a fantastic manager and mentor, and helped me
 						and our team grow as engineers. He has helped keep our codebase
@@ -110,19 +116,6 @@ export default function Software() {
 					</div>
 					<span className="text-gray-400">
 						- Terry Gleckler, Operations Manager at PredictionHealth
-					</span>
-				</li>
-				<li>
-					<div>
-						"He's a brilliant engineer but also a steady leader and great team
-						player. His attention to detail and thoughtfulness about his work
-						were exemplary, and his ability to work through tough problems
-						collaboratively was integral to building a great Product. He can
-						pretty much do it all and isn't afraid to jump in and get things
-						built quickly, while also never sacrificing quality."
-					</div>
-					<span className="text-gray-400">
-						- Kate Celauro, Customer Success Manager at PredictionHealth
 					</span>
 				</li>
 				<li>
