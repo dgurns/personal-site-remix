@@ -1,6 +1,6 @@
 import { Link } from '@remix-run/react';
 import { useState } from 'react';
-// import { posts } from 'app/routes/blog._index';
+import { posts } from 'app/routes/blog._index';
 
 export const meta = () => [
 	{
@@ -8,7 +8,7 @@ export const meta = () => [
 	},
 ];
 
-// const mostRecentPost = posts[0];
+const mostRecentPost = posts[0];
 
 export default function Index() {
 	const [showYears, setShowYears] = useState(false);
@@ -32,17 +32,17 @@ export default function Index() {
 					<Link to="/music">electric bass</Link>
 				</li>
 				<li className="h-4" />
-				{/* {mostRecentPost && (
+				{mostRecentPost && (
 					<li>
 						Latest blog post:{' '}
 						<Link to={`/blog/${mostRecentPost.slug}`}>
 							{mostRecentPost.title}
 						</Link>
 					</li>
-				)} */}
-				<li>
+				)}
+				{/* <li>
 					Latest experiment: <Link to="/experiments">Insta FFmpeg</Link>
-				</li>
+				</li> */}
 			</ul>
 
 			<footer className="mt-10 flex flex-row items-center space-x-4">
@@ -94,11 +94,12 @@ export default function Index() {
 				>
 					<ul>
 						<li>
-							2024
-							{showYears && ': Year of the Expanse'}
+							2025
+							{showYears && ': Year of ?'}
 						</li>
 						{showYears && (
 							<>
+								<li>2024: Year of the Expanse</li>
 								<li>2023: Year of Friction</li>
 								<li>2022: Year of the Comeback</li>
 								<li>2021: Year of the Upside</li>
