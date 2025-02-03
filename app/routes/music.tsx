@@ -56,7 +56,7 @@ export default function Music() {
 				<a href="https://www.instagram.com/stories/highlights/17878828656079490/">
 					electric bass
 				</a>
-				.
+				. And I just released a <a href="https://album.dangurney.net">new album</a> with Christina Dolphin and Brian McGrath.
 			</p>
 			<p>
 				Have a question? Feel free to{' '}
@@ -100,17 +100,30 @@ export default function Music() {
 					Ignorance Is Bliss by Dan Gurney
 				</a>
 			</iframe>
-			<h2 className="mt-8 mb-6">Duet Album</h2>
+			<h2 className="mt-8 mb-6">Duet Albums</h2>
 			<iframe
 				title="Irish Music from the Hudson Valley"
 				height="120"
 				width="100%"
+				className='mb-4'
 				frameBorder="0"
 				src="https://bandcamp.com/EmbeddedPlayer/album=1139856205/size=large/bgcol=333333/linkcol=bfdbfe/tracklist=false/artwork=small/transparent=true/"
 				seamless
 			>
 				<a href="https://dylanfoleyanddangurney.bandcamp.com/album/irish-music-from-the-hudson-valley">
 					Irish Music from the Hudson Valley by Dylan Foley and Dan Gurney
+				</a>
+			</iframe>
+			<iframe
+				title="Dan Gurney & Christina Dolphin"
+				height="120"
+				width="100%"
+				frameBorder="0"
+				src="https://bandcamp.com/EmbeddedPlayer/album=2431008708/size=large/bgcol=333333/linkcol=bfdbfe/tracklist=false/artwork=small/transparent=true/"
+				seamless
+			>
+				<a href="https://dangurney.bandcamp.com/album/dan-gurney-christina-dolphin">
+					Dan Gurney & Christina Dolphin with Brian McGrath
 				</a>
 			</iframe>
 			<h2 className="mt-8 mb-6">Band Albums</h2>

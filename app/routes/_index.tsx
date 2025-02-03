@@ -32,17 +32,16 @@ export default function Index() {
 					<Link to="/music">electric bass</Link>
 				</li>
 				<li className="h-4" />
-				{mostRecentPost && (
+				{/* {mostRecentPost && (
 					<li>
 						Latest blog post:{' '}
 						<Link to={`/blog/${mostRecentPost.slug}`}>
 							{mostRecentPost.title}
 						</Link>
 					</li>
-				)}
-				{/* <li>
-					Latest experiment: <Link to="/experiments">Insta FFmpeg</Link>
-				</li> */}
+				)} */}
+				<li>New album with Christina Dolphin & Brian McGrath  <a href="https://album.dangurney.net">out now!</a></li>
+
 			</ul>
 
 			<footer className="mt-10 flex flex-row items-center space-x-4">
