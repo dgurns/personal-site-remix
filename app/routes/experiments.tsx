@@ -18,6 +18,23 @@ export default function Experiments() {
 			<ul className="list-none space-y-4 md:list-disc">
 				<li>
 					<a
+						href="https://github.com/dgurns/second-opinion"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Second Opinion ↗
+					</a>{' '}
+					<p className="text-gray-400">
+						We all put our medical symptoms into ChatGPT. But I believe that data is 
+						yours and should never leave your computer. So I built Second Opinion. 
+						Local LLM via Ollama, local SQLite database, local app. 100% private. I built this with
+						Cursor and found Gemini 2.5 Pro to be the best model at the moment. It is surprisingly
+						good at UI design – better than Claude 3.7 Sonnet and Grok 3, for this example
+						at least.
+					</p>
+				</li>
+				<li>
+					<a
 						href="https://github.com/dgurns/insta-ffmpeg"
 						target="_blank"
 						rel="noreferrer"
