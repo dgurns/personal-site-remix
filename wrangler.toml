@@ -1,4 +1,4 @@
-compatibility_date = "2023-12-30"
+compatibility_date = "2024-08-24"
 
 [env.dev]
 kv_namespaces = [

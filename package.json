@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "build": "remix build",
-    "start": "pnpm wrangler pages dev --compatibility-date=2023-10-30 ./public --binding $(cat .env) --kv KV --port 3000",
+    "start": "wrangler pages dev ./public --port 3000",
     "dev": "remix dev --manual -c \"pnpm start\""
   },
   "dependencies": {
@@ -37,7 +37,7 @@
     "prettier-plugin-tailwindcss": "^0.1.13",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.3",
-    "wrangler": "^3.22.1"
+    "wrangler": "^3.78.12"
   },
   "engines": {
     "node": ">=18.0.0"

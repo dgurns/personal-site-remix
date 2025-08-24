@@ -18,6 +18,22 @@ export default function Experiments() {
 			<ul className="list-none space-y-4 md:list-disc">
 				<li>
 					<a
+						href="https://github.com/dgurns/prompt-roulette"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Prompt Roulette ↗
+					</a>{' '}
+					<p className="text-gray-400">
+					Who said prompts had to be boring? Why not live on the wild side. 99 times out of 100, promptRoulette() will return an empty string. But the other time, it will return a prompt injection that will irrevocably damage your brand. 
+					Available now on <a href="https://pypi.org/project/prompt-roulette/" target="_blank">PyPI</a> and <a href="https://www.npmjs.com/package/@dgurns/prompt-roulette" target="_blank">NPM</a>.
+					Total time to build: 1 hour (while toddler was falling asleep). 
+					Total cost with Claude Code: $2.38. 
+					Interestingly, Claude happily built the entire thing, but all of a sudden refused to help write the Readme out of a newfound moral compass. Go figure!
+					</p>
+				</li>
+				<li>
+					<a
 						href="https://github.com/dgurns/second-opinion"
 						target="_blank"
 						rel="noreferrer"
