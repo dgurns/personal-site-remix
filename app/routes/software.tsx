@@ -10,6 +10,7 @@ export default function Software() {
 	return (
 		<div>
 			<h1 className="mb-6">Software</h1>
+			<p>I love helping early stage startups find the thing that leads to exponential growth.</p>
 			<p>
 				I'm a Staff Software Engineer at{' '}
 				<a href="https://inscribe.ai" target="_blank" rel="noreferrer">
@@ -20,7 +21,7 @@ export default function Software() {
 				in fintech like Ramp and Plaid.
 			</p>
 			<p>
-				Before that, I built a new AI product line at PredictionHealth, worked
+				Before that, I built a new AI product line at PredictionHealth which grew to millions in revenue and led to the company's acquisition, worked
 				at CarTrawler and UBiqube, ran a freelance consultancy, and founded a
 				startup called Concert Window.
 			</p>
@@ -69,7 +70,7 @@ export default function Software() {
 					<div>
 						I helped PredictionHealth build a new product line, now doing
 						millions in revenue, which applies AI to medical care to improve
-						outcomes and efficiency. I worked with ML models and LLMs,
+						outcomes and efficiency. The company was subsequently acquired. I worked with ML models and LLMs,
 						rearchitected legacy React, Go, and Python apps, set up scalable dev
 						processes with automated CI/CD, and mentored engineers, among many
 						other things. Some tools I used are React, NextJS, TypeScript,

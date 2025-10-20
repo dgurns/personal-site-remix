@@ -24,8 +24,6 @@ export default function Nav() {
 					Experiments
 				</Link>
 			</div>
-
-			<a href="https://album.dangurney.net" style={{ color: '#fef08a' }}>New Album</a>
 		</nav>
 	);
 }
