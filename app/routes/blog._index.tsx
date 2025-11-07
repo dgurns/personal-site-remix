@@ -14,6 +14,11 @@ interface Post {
 }
 export const posts: Post[] = [
 	{
+		title: 'The Unexpected Effect of AI Coding Tools',
+		date: 'November 7, 2025',
+		slug: 'ai-coding-tools',
+	},
+	{
 		title: 'Father Charlie Coen, 1933-2024',
 		date: 'January 27, 2025',
 		slug: 'father-charlie'
