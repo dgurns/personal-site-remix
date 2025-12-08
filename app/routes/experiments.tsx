@@ -18,6 +18,23 @@ export default function Experiments() {
 			<ul className="list-none space-y-4 md:list-disc">
 				<li>
 					<a
+						href="https://mysuperkid.ai"
+						target="_blank"
+						rel="noreferrer"
+					>
+						My Super Kid ↗
+					</a>{' '}
+					<p className="text-gray-400">
+					They say do what you know... and now as a parent I'm intrigued by using AI to create fun experiences for kids. When 
+					Google's Gemini 3 Pro image model came out, I knew I had to build something with it. My Super Kid lets you turn your kid
+					into a superhero -- and get the t-shirt delivered to your door! This was built over a weekend using Claude Code with Opus 4.5,
+					which now feels like having a senior engineer collaborating by your side. It will even ask you clarifying questions! 
+					Payments are handled with Stripe, whose dev experience is top class as always. The site is Tanstack Start (quite impressed), 
+					Tailwind, Better Auth, and deployed on Cloudflare. Using D1 for database and R2 for image storage. 
+					</p>
+				</li>
+				<li>
+					<a
 						href="https://github.com/dgurns/prompt-roulette"
 						target="_blank"
 						rel="noreferrer"
