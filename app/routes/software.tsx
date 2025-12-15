@@ -10,13 +10,20 @@ export default function Software() {
 	return (
 		<div>
 			<h1 className="mb-6">Software</h1>
-			<p>I love helping early stage startups find the thing that leads to exponential growth.</p>
+			<p>I am a "founder-type engineer" with deep hands-on experience building AI 
+				systems including autonomous LLM-powered agents.
+			</p>
+			<p>I specialize in growing products from the early stage to strong product-market 
+				fit. I build scalable foundations that can power years of growth. I love setting up 
+				lightweight, highly leveraged internal processes, talking to users, and fostering 
+				collaboration across C-level, sales, customer success, and engineering.
+			</p>
 			<p>
-				I'm a Staff Software Engineer at{' '}
+				Currently I'm a Staff Software Engineer at{' '}
 				<a href="https://inscribe.ai" target="_blank" rel="noreferrer">
 					Inscribe AI ↗
 				</a>
-				, building LLM-powered AI agents to automate manual tasks and help catch
+				, building AI agents to automate manual tasks and help catch
 				financial fraud. Inscribe's customers include some of the biggest names
 				in fintech like Ramp and Plaid.
 			</p>
