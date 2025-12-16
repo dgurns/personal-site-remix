@@ -10,7 +10,7 @@ export default function Software() {
 	return (
 		<div>
 			<h1 className="mb-6">Software</h1>
-			<p>I am a "founder-type engineer" with deep hands-on experience building AI 
+			<p>I am a founder and engineer with deep hands-on experience building AI 
 				systems including autonomous LLM-powered agents.
 			</p>
 			<p>I specialize in growing products from the early stage to strong product-market 
@@ -23,14 +23,14 @@ export default function Software() {
 				<a href="https://inscribe.ai" target="_blank" rel="noreferrer">
 					Inscribe AI ↗
 				</a>
-				, building AI agents to automate manual tasks and help catch
+				{' '}(YC S18), building AI agents to automate manual tasks and help catch
 				financial fraud. Inscribe's customers include some of the biggest names
 				in fintech like Ramp and Plaid.
 			</p>
 			<p>
-				Before that, I built a new AI product line at PredictionHealth which grew to millions in revenue and led to the company's acquisition, worked
-				at CarTrawler and UBiqube, ran a freelance consultancy, and founded a
-				startup called Concert Window.
+				Previously built and scaled an AI-driven medical documentation platform at PredictionHealth 
+				from pre-seed stage to millions in ARR and an acquisition. Before that I founded and grew 
+				Concert Window (Techstars '14) to 200K+ users and $2M revenue. 
 			</p>
 			<p>
 				I love open source and enjoy working on side projects when time permits.
