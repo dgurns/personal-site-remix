@@ -16,7 +16,7 @@ export default function Software() {
 			<p>I specialize in growing products from the early stage to strong product-market 
 				fit. I build scalable foundations that can power years of growth. I love setting up 
 				lightweight, highly leveraged internal processes, talking to users, and fostering 
-				collaboration across C-level, sales, customer success, and engineering.
+				collaboration across teams.
 			</p>
 			<p>
 				Currently I'm a Staff Software Engineer at{' '}
