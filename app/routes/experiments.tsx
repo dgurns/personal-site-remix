@@ -11,7 +11,7 @@ export default function Experiments() {
 		<div className="space-y-6">
 			<h1>Experiments</h1>
 			<p>
-				Sometimes I try out new tech or build fun ideas. All of these are open
+				Sometimes I try out new tech or build fun ideas. Most of these are open
 				source.
 			</p>
 
