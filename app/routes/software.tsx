@@ -13,24 +13,19 @@ export default function Software() {
 			<p>I am a founder and engineer with deep hands-on experience building AI 
 				systems including autonomous LLM-powered agents.
 			</p>
-			<p>I specialize in growing products from the early stage to strong product-market 
-				fit. I build scalable foundations that can power years of growth. I love setting up 
-				lightweight, highly leveraged internal processes, talking to users, and fostering 
-				collaboration across teams.
+			<p>I love growing products from early ideas to real user traction - 
+				shipping fast, talking directly to users, and creating simple, efficient ways 
+				for teams to move quickly.
 			</p>
-			<p>
-				Currently I'm a Staff Software Engineer at{' '}
-				<a href="https://inscribe.ai" target="_blank" rel="noreferrer">
-					Inscribe AI ↗
+			<p>Right now, I'm a Staff Software Engineer at <a href="https://inscribe.ai" target="_blank" rel="noreferrer">
+					Inscribe ↗
 				</a>
-				{' '}(YC S18), building AI agents to automate manual tasks and help catch
-				financial fraud. Inscribe's customers include some of the biggest names
-				in fintech like Ramp and Plaid.
-			</p>
-			<p>
-				Previously built and scaled an AI-driven medical documentation platform at PredictionHealth 
-				from pre-seed stage to millions in ARR and an acquisition. Before that I founded and grew 
-				Concert Window (Techstars '14) to 200K+ users and $2M revenue. 
+				{' '}(YC S18), where I'm building Al agents that automate manual work and catch financial fraud 
+				for big fintech customers like Ramp and Plaid. Before that, I was engineering team lead at 
+				PredictionHealth, helping launch a new Al product line to improve medical care. We scaled 
+				it to millions in revenue before the company was acquired. Earlier: Worked at Cartrawler, ran 
+				freelance consulting, and co-founded Concert Window (Techstars '14) — a live music streaming 
+				startup that grew to over 200,000 users.
 			</p>
 			<p>
 				I love open source and enjoy working on side projects when time permits.
