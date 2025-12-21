@@ -10,7 +10,7 @@ export default function Software() {
 	return (
 		<div>
 			<h1 className="mb-6">Software</h1>
-			<p>I am a founder and engineer with deep hands-on experience building AI 
+			<p>I'm a founder and engineer with deep hands-on experience building AI 
 				systems including autonomous LLM-powered agents.
 			</p>
 			<p>I love growing products from early ideas to real user traction - 
