@@ -93,11 +93,12 @@ export default function Index() {
 				>
 					<ul>
 						<li>
-							2025
-							{showYears && ': Year of ?'}
+							2026
+							{showYears && ': Year of Connection'}
 						</li>
 						{showYears && (
 							<>
+								<li>2025: Year of Forgetfulness</li>
 								<li>2024: Year of the Expanse</li>
 								<li>2023: Year of Friction</li>
 								<li>2022: Year of the Comeback</li>
