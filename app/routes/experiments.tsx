@@ -18,6 +18,31 @@ export default function Experiments() {
 			<ul className="list-none space-y-4 md:list-disc">
 				<li>
 					<a
+						href="https://github.com/dgurns/care-log"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Care Log ↗
+					</a>{' '}
+					<p className="text-gray-400">
+					I've had too many friends with close calls in the medical system, and I don't like typing all my medical data into 
+					ChatGPT, so I created my own private medical AI. It's called Care Log. You tell it about yourself and your symptoms, 
+					and it automatically saves your medical history over time. Anytime you mention something new, it searches across your
+					full medical context, just like a doctor would. I have a deployed version at <a
+						href="https://carelog.me"
+						target="_blank"
+						rel="noreferrer"
+					>
+						https://carelog.me ↗
+					</a>, which I use myself regularly when I'm out and about, but I would need to figure out usage-based billing and secure 
+					data storage before opening it up to anyone else -- and I really don't want to have anything to do with other people's medical
+					data! In any case, the repo is open source so you can run this privately on your own computer, or even deploy it yourself. The
+					only external requests go to the Anthropic API and as per their terms, they don't save or train on your data. And of course, you
+					could use any other LLM provider - including a local LLM!
+					</p>
+				</li>
+				<li>
+					<a
 						href="https://mysuperkid.ai"
 						target="_blank"
 						rel="noreferrer"
