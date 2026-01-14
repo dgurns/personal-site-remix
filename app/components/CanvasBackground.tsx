@@ -17,6 +17,7 @@ interface NodeState extends ConstellationNode {
   depth: number; // for parallax-like depth
   imageLoaded: boolean;
   imageElement: HTMLImageElement | null;
+  activeAmount: number; // 0-1, for smooth hover animation
 }
 
 const NODE_BASE_SIZE = 55;
@@ -239,6 +240,7 @@ export function CanvasBackground({ className }: { className?: string }) {
           depth,
           imageLoaded: false,
           imageElement: img,
+          activeAmount: 0,
         };
 
         img.onload = () => {
@@ -513,7 +515,11 @@ export function CanvasBackground({ className }: { className?: string }) {
     (ctx: CanvasRenderingContext2D, node: NodeState, time: number) => {
       // Calculate pulse
       const pulse = Math.sin(time * PULSE_SPEED + node.phase) * PULSE_AMOUNT;
+
       const currentSize = node.size * (1 + pulse);
+
+      const width = currentSize;
+      const height = currentSize;
       const x = node.x - currentSize / 2;
       const y = node.y - currentSize / 2;
       const radius = 10;
@@ -532,8 +538,8 @@ export function CanvasBackground({ className }: { className?: string }) {
         ctx,
         x - 4,
         y - 4,
-        currentSize + 8,
-        currentSize + 8,
+        width + 8,
+        height + 8,
         radius + 2
       );
       ctx.fill();
@@ -544,11 +550,25 @@ export function CanvasBackground({ className }: { className?: string }) {
       ctx.globalAlpha = depthOpacity;
 
       // Create rounded rectangle path
-      roundedRect(ctx, x, y, currentSize, currentSize, radius);
+      roundedRect(ctx, x, y, width, height, radius);
 
       if (node.imageLoaded && node.imageElement) {
         ctx.clip();
-        ctx.drawImage(node.imageElement, x, y, currentSize, currentSize);
+        // "Cover" style crop - grab center square from source image
+        const img = node.imageElement;
+        const imgW = img.naturalWidth;
+        const imgH = img.naturalHeight;
+        let sx = 0, sy = 0, sSize: number;
+        if (imgW > imgH) {
+          // Landscape: crop sides
+          sSize = imgH;
+          sx = (imgW - imgH) / 2;
+        } else {
+          // Portrait or square: crop top/bottom
+          sSize = imgW;
+          sy = (imgH - imgW) / 2;
+        }
+        ctx.drawImage(img, sx, sy, sSize, sSize, x, y, width, height);
       } else {
         // Fallback
         ctx.fillStyle = "rgba(30, 41, 59, 0.8)";
@@ -592,6 +612,19 @@ export function CanvasBackground({ className }: { className?: string }) {
 
     const nodes = nodesRef.current;
 
+    // Find the active (nearest) node for highlighting
+    const mouse = mouseRef.current;
+    const activeNode = !isMobile && mouse.x > 0 && mouse.y > 0
+      ? findNearestNode(mouse.x, mouse.y)
+      : null;
+
+    // Animate activeAmount for each node (smooth transition)
+    const activeSpeed = 0.12;
+    nodes.forEach((node) => {
+      const target = node === activeNode ? 1 : 0;
+      node.activeAmount += (target - node.activeAmount) * activeSpeed;
+    });
+
     // Sort by depth for proper layering
     const sortedNodes = [...nodes].sort((a, b) => a.depth - b.depth);
 
@@ -604,7 +637,7 @@ export function CanvasBackground({ className }: { className?: string }) {
     });
 
     animationRef.current = requestAnimationFrame(render);
-  }, [updatePhysics, drawEdges, drawNode]);
+  }, [updatePhysics, drawEdges, drawNode, findNearestNode]);
 
   // Handle resize
   const handleResize = useCallback(() => {
