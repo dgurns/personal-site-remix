@@ -9,6 +9,7 @@ import {
 } from '@remix-run/react';
 import styles from './gen-styles/app.css';
 import Nav from '~/components/Nav';
+import { CanvasBackground } from './components/CanvasBackground';
 
 export const meta: MetaFunction = () => [
 	{
@@ -68,7 +69,7 @@ export default function App() {
 			</head>
 			<body>
 				<Nav />
-				<div className="mt-4 flex flex-col items-center p-4 md:mt-8 md:p-8">
+				<div className="relative mt-4 flex flex-col items-center p-4 md:mt-8 md:p-8">
 					<div className="w-full max-w-xl pb-48">
 						<Outlet />
 					</div>

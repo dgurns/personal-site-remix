@@ -6,9 +6,10 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix build",
+    "build:css": "tailwindcss -i ./styles/app.css -o ./app/gen-styles/app.css",
+    "build": "npm run build:css && remix build",
     "start": "wrangler pages dev ./public --port 3000",
-    "dev": "remix dev --manual -c \"pnpm start\""
+    "dev": "concurrently \"tailwindcss -i ./styles/app.css -o ./app/gen-styles/app.css --watch\" \"remix dev --manual -c 'pnpm start'\""
   },
   "dependencies": {
     "@remix-run/cloudflare": "^2.4.1",
