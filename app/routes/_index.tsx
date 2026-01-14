@@ -13,7 +13,7 @@ export default function Index() {
 
   return (
     <>
-      <CanvasBackground className="fixed top-0 left-0 bottom-0 right-0 z-0 hidden sm:block" />
+      <CanvasBackground className="fixed top-0 left-0 bottom-0 right-0 z-0 hidden lg:block" />
 
       <div className="mt-8 flex flex-col items-center justify-center text-center md:mt-16 z-10 relative">
         <img
