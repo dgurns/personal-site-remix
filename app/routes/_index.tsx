@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CanvasBackground } from "~/components/CanvasBackground";
 
 export const meta = () => [
@@ -8,12 +8,29 @@ export const meta = () => [
   },
 ];
 
+const SCREEN_WIDTH_TO_SHOW_CONSTELLATION = 1024;
+
 export default function Index() {
   const [showYears, setShowYears] = useState(false);
+  const [shouldShowConstellation, setShouldShowConstellation] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setShouldShowConstellation(
+        window.innerWidth >= SCREEN_WIDTH_TO_SHOW_CONSTELLATION
+      );
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   return (
     <>
-      <CanvasBackground className="fixed top-0 left-0 bottom-0 right-0 z-0 hidden lg:block" />
+      {shouldShowConstellation && (
+        <CanvasBackground className="fixed top-0 left-0 bottom-0 right-0 z-0" />
+      )}
 
       <div className="mt-8 flex flex-col items-center justify-center text-center md:mt-16 z-10 relative">
         <img
