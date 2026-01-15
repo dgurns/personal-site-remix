@@ -111,6 +111,14 @@ export function CanvasBackground({ className }: { className?: string }) {
         },
       ].filter((r) => r.maxX > r.minX && r.maxY > r.minY);
 
+      // Fallback if no valid regions (screen too small for exclusion zone)
+      if (regions.length === 0) {
+        return {
+          x: padding + Math.random() * (width - padding * 2),
+          y: padding + Math.random() * (height - padding * 2),
+        };
+      }
+
       // Pick a random valid region weighted by area
       const areas = regions.map((r) => (r.maxX - r.minX) * (r.maxY - r.minY));
       const totalArea = areas.reduce((sum, a) => sum + a, 0);
