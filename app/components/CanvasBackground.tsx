@@ -37,8 +37,6 @@ const GLOW_BLUR = 20;
 // Content exclusion zone (centered rectangle where nodes should avoid)
 const EXCLUSION_ZONE_WIDTH = 550; // desktop width
 const EXCLUSION_ZONE_HEIGHT = 550; // covers profile to social links
-const EXCLUSION_ZONE_WIDTH_MOBILE = 350;
-const EXCLUSION_ZONE_HEIGHT_MOBILE = 500;
 const EXCLUSION_BUFFER = 20; // soft buffer around zone
 const EXCLUSION_REPULSION_STRENGTH = 0.03;
 const MIN_NODE_SPACING = 120; // minimum distance between nodes on init
@@ -65,30 +63,7 @@ export function CanvasBackground({ className }: { className?: string }) {
   const mouseRef = useRef({ x: -1000, y: -1000 });
   const animationRef = useRef<number>(0);
   const timeRef = useRef<number>(0);
-  const isMobileRef = useRef(false);
   const reducedMotionRef = useRef(false);
-
-  // Helper to check if point is inside exclusion zone
-  const isInExclusionZone = useCallback(
-    (
-      x: number,
-      y: number,
-      centerX: number,
-      centerY: number,
-      zoneWidth: number,
-      zoneHeight: number
-    ): boolean => {
-      const halfW = zoneWidth / 2 + EXCLUSION_BUFFER;
-      const halfH = zoneHeight / 2 + EXCLUSION_BUFFER;
-      return (
-        x > centerX - halfW &&
-        x < centerX + halfW &&
-        y > centerY - halfH &&
-        y < centerY + halfH
-      );
-    },
-    []
-  );
 
   // Generate position outside exclusion zone
   const generatePositionOutsideZone = useCallback(
@@ -164,24 +139,16 @@ export function CanvasBackground({ className }: { className?: string }) {
 
   // Initialize nodes with random positions outside exclusion zone, spaced apart
   const initializeNodes = useCallback(
-    (width: number, height: number, isMobile: boolean) => {
-      const nodesToUse = isMobile
-        ? constellationNodes.slice(0, 10)
-        : constellationNodes;
-
+    (width: number, height: number) => {
       const padding = NODE_BASE_SIZE * 2;
       const centerX = width / 2;
       const centerY = height / 2;
-      const zoneWidth = isMobile
-        ? EXCLUSION_ZONE_WIDTH_MOBILE
-        : EXCLUSION_ZONE_WIDTH;
-      const zoneHeight = isMobile
-        ? EXCLUSION_ZONE_HEIGHT_MOBILE
-        : EXCLUSION_ZONE_HEIGHT;
+      const zoneWidth = EXCLUSION_ZONE_WIDTH;
+      const zoneHeight = EXCLUSION_ZONE_HEIGHT;
 
       const placedPositions: { x: number; y: number }[] = [];
 
-      nodesRef.current = nodesToUse.map((node, index) => {
+      nodesRef.current = constellationNodes.map((node, index) => {
         // Try multiple positions and pick the one with best spacing
         let bestPos = { x: 0, y: 0 };
         let bestMinDist = -1;
@@ -236,7 +203,7 @@ export function CanvasBackground({ className }: { className?: string }) {
           baseX: x,
           baseY: y,
           size,
-          phase: (index / nodesToUse.length) * Math.PI * 2, // stagger phases
+          phase: (index / constellationNodes.length) * Math.PI * 2, // stagger phases
           depth,
           imageLoaded: false,
           imageElement: img,
@@ -278,7 +245,7 @@ export function CanvasBackground({ className }: { className?: string }) {
 
   // Update physics
   const updatePhysics = useCallback(
-    (width: number, height: number, isMobile: boolean) => {
+    (width: number, height: number) => {
       const nodes = nodesRef.current;
       const mouse = mouseRef.current;
       const padding = NODE_BASE_SIZE;
@@ -286,20 +253,14 @@ export function CanvasBackground({ className }: { className?: string }) {
       // Exclusion zone parameters
       const centerX = width / 2;
       const centerY = height / 2;
-      const zoneWidth = isMobile
-        ? EXCLUSION_ZONE_WIDTH_MOBILE
-        : EXCLUSION_ZONE_WIDTH;
-      const zoneHeight = isMobile
-        ? EXCLUSION_ZONE_HEIGHT_MOBILE
-        : EXCLUSION_ZONE_HEIGHT;
+      const zoneWidth = EXCLUSION_ZONE_WIDTH;
+      const zoneHeight = EXCLUSION_ZONE_HEIGHT;
       const halfW = zoneWidth / 2 + EXCLUSION_BUFFER;
       const halfH = zoneHeight / 2 + EXCLUSION_BUFFER;
 
       // Find the nearest node to attract to mouse
       const nearestNode =
-        !isMobile && mouse.x > 0 && mouse.y > 0
-          ? findNearestNode(mouse.x, mouse.y)
-          : null;
+        mouse.x > 0 && mouse.y > 0 ? findNearestNode(mouse.x, mouse.y) : null;
 
       nodes.forEach((node) => {
         // If this is the nearest node, attract it toward mouse (but not all the way)
@@ -534,14 +495,7 @@ export function CanvasBackground({ className }: { className?: string }) {
       ctx.shadowBlur = GLOW_BLUR;
       ctx.fillStyle = categoryGlowColors[node.category];
 
-      roundedRect(
-        ctx,
-        x - 4,
-        y - 4,
-        width + 8,
-        height + 8,
-        radius + 2
-      );
+      roundedRect(ctx, x - 4, y - 4, width + 8, height + 8, radius + 2);
       ctx.fill();
       ctx.restore();
 
@@ -558,7 +512,9 @@ export function CanvasBackground({ className }: { className?: string }) {
         const img = node.imageElement;
         const imgW = img.naturalWidth;
         const imgH = img.naturalHeight;
-        let sx = 0, sy = 0, sSize: number;
+        let sx = 0,
+          sy = 0,
+          sSize: number;
         if (imgW > imgH) {
           // Landscape: crop sides
           sSize = imgH;
@@ -595,7 +551,6 @@ export function CanvasBackground({ className }: { className?: string }) {
 
     const width = canvas.width / (window.devicePixelRatio || 1);
     const height = canvas.height / (window.devicePixelRatio || 1);
-    const isMobile = isMobileRef.current;
     const reducedMotion = reducedMotionRef.current;
 
     // Update time
@@ -607,16 +562,15 @@ export function CanvasBackground({ className }: { className?: string }) {
 
     // Update physics (skip if reduced motion)
     if (!reducedMotion) {
-      updatePhysics(width, height, isMobile);
+      updatePhysics(width, height);
     }
 
     const nodes = nodesRef.current;
 
     // Find the active (nearest) node for highlighting
     const mouse = mouseRef.current;
-    const activeNode = !isMobile && mouse.x > 0 && mouse.y > 0
-      ? findNearestNode(mouse.x, mouse.y)
-      : null;
+    const activeNode =
+      mouse.x > 0 && mouse.y > 0 ? findNearestNode(mouse.x, mouse.y) : null;
 
     // Animate activeAmount for each node (smooth transition)
     const activeSpeed = 0.12;
@@ -658,11 +612,9 @@ export function CanvasBackground({ className }: { className?: string }) {
       ctx.scale(dpr, dpr);
     }
 
-    isMobileRef.current = width < 768;
-
     // Reinitialize nodes on first load or significant resize
     if (nodesRef.current.length === 0) {
-      initializeNodes(width, height, isMobileRef.current);
+      initializeNodes(width, height);
     } else {
       // Update base positions to keep nodes in bounds
       const padding = NODE_BASE_SIZE * 2;
