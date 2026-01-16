@@ -11,3 +11,5 @@ yarn-error.log
 build/
 .wrangler/
 functions/
+
+.DS_Store
