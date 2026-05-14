@@ -14,6 +14,11 @@ interface Post {
 }
 export const posts: Post[] = [
   {
+    title: "Restraint",
+    date: "May 14, 2026",
+    slug: "restraint",
+  },
+  {
     title: "AI for Better Product Decisions",
     date: "May 1, 2026",
     slug: "ai-for-better-product-decisions",
