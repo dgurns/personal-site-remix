@@ -60,22 +60,6 @@ export default function Experiments() {
 				</li>
 				<li>
 					<a
-						href="https://github.com/dgurns/prompt-roulette"
-						target="_blank"
-						rel="noreferrer"
-					>
-						Prompt Roulette ↗
-					</a>{' '}
-					<p className="text-gray-400">
-					Who said prompts had to be boring? Why not live on the wild side. 99 times out of 100, promptRoulette() will return an empty string. But the other time, it will return a prompt injection that will irrevocably damage your brand. 
-					Available now on <a href="https://pypi.org/project/prompt-roulette/" target="_blank">PyPI</a> and <a href="https://www.npmjs.com/package/@dgurns/prompt-roulette" target="_blank">NPM</a>.
-					Total time to build: 1 hour (while toddler was falling asleep). 
-					Total cost with Claude Code: $2.38. 
-					Interestingly, Claude happily built the entire thing, but all of a sudden refused to help write the Readme out of a newfound moral compass. Go figure!
-					</p>
-				</li>
-				<li>
-					<a
 						href="https://github.com/dgurns/second-opinion"
 						target="_blank"
 						rel="noreferrer"
@@ -233,24 +217,6 @@ export default function Experiments() {
 						opportunity to play around with React Server Components. In the
 						future we might turn this into a ChatGPT plugin since the backend
 						server can be used for that too.
-					</p>
-				</li>
-				<li>
-					<a
-						href="https://github.com/dgurns/craic-ai"
-						target="_blank"
-						rel="noreferrer"
-					>
-						Craic AI ↗
-					</a>{' '}
-					<p className="text-gray-400">
-						I thought it might be cool to use the ChatGPT API to help plan group
-						events. The idea is that you could input an event name and rough
-						date range, enter your invitees, and then they'd be automatically
-						emailed about availability. Then the app would feed the responses
-						into ChatGPT and have it pick a date that works for everyone. Not
-						sure if I'll finish this one but the tech was fun: Remix, Cloudflare
-						Pages, D1, ChatGPT API, and some prompt engineering.
 					</p>
 				</li>
 				<li>
