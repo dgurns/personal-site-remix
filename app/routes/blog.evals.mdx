@@ -1,0 +1,22 @@
+---
+meta:
+  - title: Evals
+---
+
+# {attributes.meta[0].title}
+
+<div className="mt-1 mb-6 text-gray-400">September 15, 2026</div>
+
+When you're running agents in production at scale, evals are not optional.
+
+I'll even go further - when you're using agents in an important internal workflow, evals aren't optional there either.
+
+When you've built enough agents, you realize how much changing a single word in a prompt can affect output quality. And swapping in a "better" model sometimes results in worse outputs for the task at hand.
+
+Investing in evals early pays dividends. You don't necessarily need a framework. Different agents sometimes need different types of evals. With today's coding agents and LLMs, evals are easy to build.
+
+The hardest part is ground truths. Agents can help assemble ground truth sets and even help draft individual ground truths, but a human needs to confirm each final value. It's a slow process. But it's worth it.
+
+Ground truths are something your company owns. Models and harnesses may change, but ground truths remain valuable.
+
+Let me end with a recommendation: this brilliant article by Pedro Tabacof of Fin. [Why not just ship it?](https://ideas.fin.ai/p/why-not-just-ship-it)
