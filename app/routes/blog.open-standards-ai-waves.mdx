@@ -1,0 +1,18 @@
+---
+meta:
+  - title: Open Standards and Riding the AI Waves
+---
+
+# {attributes.meta[0].title}
+
+<div className="mt-1 mb-6 text-gray-400">September 29, 2026</div>
+
+Although AI developments keep arriving at a record pace, zoom out and a pattern is emerging: There have been several "epochs", let's call them, and companies that focused on implementing foundational, reusable building blocks are in a great place.
+
+First, LLMs. Jumping headlong into early frameworks like LangChain (respectfully) was a mistake, since the frameworks couldn't keep pace with API changes. But companies who built simple, lightweight LLM wrappers could easily adjust API schemas as new models came out. Similarly, being model-agnostic via something like AWS Bedrock was a smart move instead of going all-in with a single provider; if a better model from another provider came out the next day, they could adopt immediately.
+
+Then, agents. Companies that had lightweight LLM abstractions and their choice of models were well placed to start building agents. It was a good move to work on skills and MCPs -- both improved workflows right off the bat, and were portable to any agent harness. OpenCode or Pi looking good? Move the skills and MCPs over and very little additional setup is required.
+
+Now, persistent always-on agents are coming. Looking back pre-LLMs, if you invested in reproducible dev environments like Stripe, that decision is paying dividends. Have a dev environment you can run on any host, plus a model-agnostic LLM provider, skills, and MCPs? Your persistent agent is off to a head start.
+
+Each of these phases builds on top of the previous ones and seems to repeatedly teach the same lesson: Work on agnostic, composable building blocks and you'll be able to ride each wave as it comes in. On the other hand, skip the foundational work or over-index on a locked-in system, and each wave will get harder and harder to adopt.
