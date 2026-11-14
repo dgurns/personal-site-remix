@@ -1,0 +1,30 @@
+---
+meta:
+  - title: Building a Persistent Always-On Agent for Our Home
+---
+
+# {attributes.meta[0].title}
+
+<div className="mt-1 mb-6 text-gray-400">November 14, 2026</div>
+
+Today's fun project was to build a persistent always-on agent for our home. Partly as an excuse to play around with a bunch of new tech, and partly for legit reasons - to automate all the annoying stuff like manual calendar invites and janky shared Apple Notes to-do lists. With a bigger goal of automating grocery shopping completely.
+
+We called it Alice, after an old landlord (long story).
+
+I started with a VM on Hetzner networked via Tailscale. After all the recent hacks I'm extremely paranoid about the public internet, and Tailscale enables me to block all incoming network connections on the VM. To build this, I'm using Rex to multiplex coding agent sessions across my laptop as well as on the VM. The coding model is Opus 5.5.
+
+The idea is that my wife and I can each chat to the same long-running agent session from our phones. The agent can then use tools to do anything we want. For example, I'm planning to add the Playwright MCP so it can operate a browser and fill a Tesco cart.
+
+The agent runs on Pi Durable which handles multiplayer, resumability, and compaction.
+
+There is a skills folder, so as it notices repetitive workflows, it can convert them to skills which will make them more token efficient.
+
+There is also memory which consists of local Markdown files in a wiki format.
+
+The best part? The agent can modify itself. So as you're talking to it, you can say something like "Can you add a way to have a shared todo list which updates in real time?" and it will do it. In the background, it will use git to commit and push the changes, which means if anything goes wrong, it's easy to revert.
+
+The user experience is already brilliant. No more typing - you tap a button to talk, and a local Parakeet model on the VM converts it to text. The whole thing has cost under $20 to build, taken a few hours, and has already made manual calendar invites and Apple Notes sync issues a thing of the past.
+
+The biggest takeaway so far: if software is this easy to build, the calculus tips strongly towards owning it yourself. Your data stays private. You can customize it precisely to your use case.
+
+Now to see if I can make groceries magically appear at the door every couple days...
